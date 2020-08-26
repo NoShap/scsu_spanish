@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: aefa129ce36854490a38632959b15c62
+=======
+<<<<<<< HEAD:SpanishEnvironment1/Assets/Prison.meta
+guid: 4d430756a20df4d92a5ebe869846455c
+=======
+guid: aefa129ce36854490a38632959b15c62
+>>>>>>> master:SpanishEnvironment1/Assets/anims.meta
+>>>>>>> master
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
