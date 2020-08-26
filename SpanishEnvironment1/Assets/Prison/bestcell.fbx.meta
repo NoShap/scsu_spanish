@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9034ff4dcaa2c4caca1463d37345f223
+=======
+<<<<<<< HEAD:SpanishEnvironment1/Assets/Animation/OtherAnimations/muskets set.obj.meta
+guid: e37fc284dac85489e90e41e0ea6c5c2a
+=======
+guid: 9034ff4dcaa2c4caca1463d37345f223
+>>>>>>> master:SpanishEnvironment1/Assets/Prison/bestcell.fbx.meta
+>>>>>>> master
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []

@@ -1159,7 +1159,11 @@ ModelImporter:
   - first:
       41386430: 2186277476908879412
     second: ImportLogs
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -1203,7 +1207,11 @@ ModelImporter:
 <<<<<<< HEAD
 =======
     sortHierarchyByName: 1
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -1224,7 +1232,11 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -1241,7 +1253,11 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 0
     normalImportMode: 1
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -1258,7 +1274,11 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
     human:
     - boneName: DEF-spine
       humanName: Hips
@@ -2237,7 +2257,11 @@ ModelImporter:
 <<<<<<< HEAD
 =======
     globalScale: 1
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1

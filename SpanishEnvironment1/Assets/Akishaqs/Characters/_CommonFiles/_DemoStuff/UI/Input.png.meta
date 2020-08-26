@@ -32,7 +32,11 @@ TextureImporter:
 <<<<<<< HEAD
   vTOnly: 0
 =======
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -70,7 +74,11 @@ TextureImporter:
 <<<<<<< HEAD
   ignorePngGamma: 0
 =======
+<<<<<<< HEAD
+>>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
+=======
 >>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
+>>>>>>> master
   applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3

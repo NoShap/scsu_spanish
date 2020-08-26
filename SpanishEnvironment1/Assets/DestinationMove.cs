@@ -45,11 +45,7 @@ public class DestinationMove : MonoBehaviour
     	}
 
     	anim.SetBool("Moving", isMoving);
-
     }
 
-    void walkForward()
-    {
 
-    }
 }

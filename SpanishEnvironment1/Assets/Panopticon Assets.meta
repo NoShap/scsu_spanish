@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:SpanishEnvironment1/Assets/Panopticon Assets.meta
 guid: 2a148a96f34c048bc9c973fced63d147
+=======
+guid: 4d430756a20df4d92a5ebe869846455c
+>>>>>>> master:SpanishEnvironment1/Assets/Prison.meta
+=======
+guid: 2a148a96f34c048bc9c973fced63d147
+>>>>>>> master
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
