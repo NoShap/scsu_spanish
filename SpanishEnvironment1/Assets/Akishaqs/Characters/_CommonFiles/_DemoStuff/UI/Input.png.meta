@@ -29,7 +29,10 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+<<<<<<< HEAD
   vTOnly: 0
+=======
+>>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -64,7 +67,10 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+<<<<<<< HEAD
   ignorePngGamma: 0
+=======
+>>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
   applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
