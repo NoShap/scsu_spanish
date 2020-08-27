@@ -1,298 +1,6 @@
 fileFormatVersion: 2
 guid: 702d781c939423543ae748e6865ee803
 ModelImporter:
-<<<<<<< HEAD
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: _M_Base_Suit
-    100002: _M_Beard_0
-    100004: _M_Beard_A
-    100006: _M_Beard_B
-    100008: _M_Beard_C
-    100010: _M_Beard_D
-    100012: _M_Beard_E
-    100014: _M_Hair_0
-    100016: _M_Hair_A
-    100018: _M_Hair_B
-    100020: _M_Hair_C
-    100022: _M_Hair_D
-    100024: _M_Hair_E
-    100026: _M_Hair_F
-    100028: _M_Hair_G
-    100030: _M_Hands_A
-    100032: _M_Hands_B
-    100034: _M_Hands_C
-    100036: _M_Head
-    100038: _M_Moustache_0
-    100040: _M_Moustache_A
-    100042: _M_Moustache_B
-    100044: _M_Moustache_C
-    100046: _M_Moustache_D
-    100048: _M_Moustache_E
-    100050: _M_Rig
-    100052: _M_Shoes_0
-    100054: _M_Shoes_A
-    100056: _M_Shoes_B
-    100058: _M_Shoes_C
-    100060: _M_Soldier
-    100062: _M_Soldier_Helmet
-    100064: DEF-breast.L
-    100066: DEF-breast.L_end
-    100068: DEF-breast.R
-    100070: DEF-breast.R_end
-    100072: DEF-f_index.01.L
-    100074: DEF-f_index.01.R
-    100076: DEF-f_index.02.L
-    100078: DEF-f_index.02.R
-    100080: DEF-f_index.03.L
-    100082: DEF-f_index.03.L_end
-    100084: DEF-f_index.03.R
-    100086: DEF-f_index.03.R_end
-    100088: DEF-f_middle.01.L
-    100090: DEF-f_middle.01.R
-    100092: DEF-f_middle.02.L
-    100094: DEF-f_middle.02.R
-    100096: DEF-f_middle.03.L
-    100098: DEF-f_middle.03.L_end
-    100100: DEF-f_middle.03.R
-    100102: DEF-f_middle.03.R_end
-    100104: DEF-f_pinky.01.L
-    100106: DEF-f_pinky.01.R
-    100108: DEF-f_pinky.02.L
-    100110: DEF-f_pinky.02.R
-    100112: DEF-f_pinky.03.L
-    100114: DEF-f_pinky.03.L_end
-    100116: DEF-f_pinky.03.R
-    100118: DEF-f_pinky.03.R_end
-    100120: DEF-f_ring.01.L
-    100122: DEF-f_ring.01.R
-    100124: DEF-f_ring.02.L
-    100126: DEF-f_ring.02.R
-    100128: DEF-f_ring.03.L
-    100130: DEF-f_ring.03.L_end
-    100132: DEF-f_ring.03.R
-    100134: DEF-f_ring.03.R_end
-    100136: DEF-foot.L
-    100138: DEF-foot.R
-    100140: DEF-forearm.L
-    100142: DEF-forearm.R
-    100144: DEF-hand.L
-    100146: DEF-hand.R
-    100148: DEF-head
-    100150: DEF-head_end
-    100152: DEF-neck
-    100154: DEF-pelvis.L
-    100156: DEF-pelvis.L_end
-    100158: DEF-pelvis.R
-    100160: DEF-pelvis.R_end
-    100162: DEF-shin.L
-    100164: DEF-shin.R
-    100166: DEF-shoulder.L
-    100168: DEF-shoulder.R
-    100170: DEF-spine
-    100172: DEF-spine.001
-    100174: DEF-spine.002
-    100176: DEF-spine.003
-    100178: DEF-thigh.L
-    100180: DEF-thigh.R
-    100182: DEF-thumb.01.L
-    100184: DEF-thumb.01.R
-    100186: DEF-thumb.02.L
-    100188: DEF-thumb.02.R
-    100190: DEF-thumb.03.L
-    100192: DEF-thumb.03.L_end
-    100194: DEF-thumb.03.R
-    100196: DEF-thumb.03.R_end
-    100198: DEF-toe.L
-    100200: DEF-toe.L_end
-    100202: DEF-toe.R
-    100204: DEF-toe.R_end
-    100206: DEF-upper_arm.L
-    100208: DEF-upper_arm.R
-    100210: heel.02.L
-    100212: heel.02.L_end
-    100214: heel.02.R
-    100216: heel.02.R_end
-    100218: //RootNode
-    400000: _M_Base_Suit
-    400002: _M_Beard_0
-    400004: _M_Beard_A
-    400006: _M_Beard_B
-    400008: _M_Beard_C
-    400010: _M_Beard_D
-    400012: _M_Beard_E
-    400014: _M_Hair_0
-    400016: _M_Hair_A
-    400018: _M_Hair_B
-    400020: _M_Hair_C
-    400022: _M_Hair_D
-    400024: _M_Hair_E
-    400026: _M_Hair_F
-    400028: _M_Hair_G
-    400030: _M_Hands_A
-    400032: _M_Hands_B
-    400034: _M_Hands_C
-    400036: _M_Head
-    400038: _M_Moustache_0
-    400040: _M_Moustache_A
-    400042: _M_Moustache_B
-    400044: _M_Moustache_C
-    400046: _M_Moustache_D
-    400048: _M_Moustache_E
-    400050: _M_Rig
-    400052: _M_Shoes_0
-    400054: _M_Shoes_A
-    400056: _M_Shoes_B
-    400058: _M_Shoes_C
-    400060: _M_Soldier
-    400062: _M_Soldier_Helmet
-    400064: DEF-breast.L
-    400066: DEF-breast.L_end
-    400068: DEF-breast.R
-    400070: DEF-breast.R_end
-    400072: DEF-f_index.01.L
-    400074: DEF-f_index.01.R
-    400076: DEF-f_index.02.L
-    400078: DEF-f_index.02.R
-    400080: DEF-f_index.03.L
-    400082: DEF-f_index.03.L_end
-    400084: DEF-f_index.03.R
-    400086: DEF-f_index.03.R_end
-    400088: DEF-f_middle.01.L
-    400090: DEF-f_middle.01.R
-    400092: DEF-f_middle.02.L
-    400094: DEF-f_middle.02.R
-    400096: DEF-f_middle.03.L
-    400098: DEF-f_middle.03.L_end
-    400100: DEF-f_middle.03.R
-    400102: DEF-f_middle.03.R_end
-    400104: DEF-f_pinky.01.L
-    400106: DEF-f_pinky.01.R
-    400108: DEF-f_pinky.02.L
-    400110: DEF-f_pinky.02.R
-    400112: DEF-f_pinky.03.L
-    400114: DEF-f_pinky.03.L_end
-    400116: DEF-f_pinky.03.R
-    400118: DEF-f_pinky.03.R_end
-    400120: DEF-f_ring.01.L
-    400122: DEF-f_ring.01.R
-    400124: DEF-f_ring.02.L
-    400126: DEF-f_ring.02.R
-    400128: DEF-f_ring.03.L
-    400130: DEF-f_ring.03.L_end
-    400132: DEF-f_ring.03.R
-    400134: DEF-f_ring.03.R_end
-    400136: DEF-foot.L
-    400138: DEF-foot.R
-    400140: DEF-forearm.L
-    400142: DEF-forearm.R
-    400144: DEF-hand.L
-    400146: DEF-hand.R
-    400148: DEF-head
-    400150: DEF-head_end
-    400152: DEF-neck
-    400154: DEF-pelvis.L
-    400156: DEF-pelvis.L_end
-    400158: DEF-pelvis.R
-    400160: DEF-pelvis.R_end
-    400162: DEF-shin.L
-    400164: DEF-shin.R
-    400166: DEF-shoulder.L
-    400168: DEF-shoulder.R
-    400170: DEF-spine
-    400172: DEF-spine.001
-    400174: DEF-spine.002
-    400176: DEF-spine.003
-    400178: DEF-thigh.L
-    400180: DEF-thigh.R
-    400182: DEF-thumb.01.L
-    400184: DEF-thumb.01.R
-    400186: DEF-thumb.02.L
-    400188: DEF-thumb.02.R
-    400190: DEF-thumb.03.L
-    400192: DEF-thumb.03.L_end
-    400194: DEF-thumb.03.R
-    400196: DEF-thumb.03.R_end
-    400198: DEF-toe.L
-    400200: DEF-toe.L_end
-    400202: DEF-toe.R
-    400204: DEF-toe.R_end
-    400206: DEF-upper_arm.L
-    400208: DEF-upper_arm.R
-    400210: heel.02.L
-    400212: heel.02.L_end
-    400214: heel.02.R
-    400216: heel.02.R_end
-    400218: //RootNode
-    2100000: Mat_M_ProCharacters
-    2300000: _M_Beard_0
-    2300002: _M_Hair_0
-    2300004: _M_Moustache_0
-    3300000: _M_Beard_0
-    3300002: _M_Hair_0
-    3300004: _M_Moustache_0
-    4300000: _M_Soldier
-    4300002: _M_Soldier_Helmet
-    4300004: _M_Hair_C
-    4300006: _M_Beard_A
-    4300008: _M_Hair_D
-    4300010: _M_Hair_A
-    4300012: _M_Hair_E
-    4300014: _M_Hair_B
-    4300016: _M_Hair_F
-    4300018: _M_Hair_G
-    4300020: _M_Beard_E
-    4300022: _M_Beard_B
-    4300024: _M_Shoes_0
-    4300026: _M_Head
-    4300028: _M_Beard_C
-    4300030: _M_Shoes_C
-    4300032: _M_Beard_D
-    4300034: _M_Shoes_A
-    4300036: _M_Shoes_B
-    4300038: _M_Moustache_A
-    4300040: _M_Moustache_C
-    4300042: _M_Moustache_B
-    4300044: _M_Moustache_D
-    4300046: _M_Moustache_E
-    4300048: _M_Hands_A
-    4300050: _M_Hands_B
-    4300052: _M_Hands_C
-    4300054: _M_Beard_0
-    4300056: _M_Hair_0
-    4300058: _M_Moustache_0
-    4300060: _M_Base_Suit
-    9500000: //RootNode
-    13700000: _M_Base_Suit
-    13700002: _M_Beard_A
-    13700004: _M_Beard_B
-    13700006: _M_Beard_C
-    13700008: _M_Beard_D
-    13700010: _M_Beard_E
-    13700012: _M_Hair_A
-    13700014: _M_Hair_B
-    13700016: _M_Hair_C
-    13700018: _M_Hair_D
-    13700020: _M_Hair_E
-    13700022: _M_Hair_F
-    13700024: _M_Hair_G
-    13700026: _M_Hands_A
-    13700028: _M_Hands_B
-    13700030: _M_Hands_C
-    13700032: _M_Head
-    13700034: _M_Moustache_A
-    13700036: _M_Moustache_B
-    13700038: _M_Moustache_C
-    13700040: _M_Moustache_D
-    13700042: _M_Moustache_E
-    13700044: _M_Shoes_0
-    13700046: _M_Shoes_A
-    13700048: _M_Shoes_B
-    13700050: _M_Shoes_C
-    13700052: _M_Soldier
-    13700054: _M_Soldier_Helmet
-    2186277476908879412: ImportLogs
-=======
   serializedVersion: 26
   internalIDToNameTable:
   - first:
@@ -1159,11 +867,6 @@ ModelImporter:
   - first:
       41386430: 2186277476908879412
     second: ImportLogs
-<<<<<<< HEAD
->>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
-=======
->>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
->>>>>>> master
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -1204,14 +907,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-<<<<<<< HEAD
-=======
     sortHierarchyByName: 1
-<<<<<<< HEAD
->>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
-=======
->>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
->>>>>>> master
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -1219,12 +915,6 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-<<<<<<< HEAD
-    optimizeMeshForGPU: 1
-    keepQuads: 0
-    weldVertices: 1
-    preserveHierarchy: 0
-=======
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
@@ -1232,53 +922,25 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
-<<<<<<< HEAD
->>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
-=======
->>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
->>>>>>> master
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-<<<<<<< HEAD
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
-  tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
-=======
   tangentSpace:
     normalSmoothAngle: 0
     normalImportMode: 1
-<<<<<<< HEAD
->>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
-=======
->>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
->>>>>>> master
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 2
     normalSmoothingSource: 0
-<<<<<<< HEAD
-  importAnimation: 1
-  copyAvatar: 0
-  humanDescription:
-    serializedVersion: 2
-=======
   referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
-<<<<<<< HEAD
->>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
-=======
->>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
->>>>>>> master
     human:
     - boneName: DEF-spine
       humanName: Hips
@@ -2254,14 +1916,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-<<<<<<< HEAD
-=======
     globalScale: 1
-<<<<<<< HEAD
->>>>>>> 05cceb21181382fc76f8680c5a76e1aeb75c16a2
-=======
->>>>>>> 2e24b9da4f24f6e4e8dcbe8cfb0ccd673d999520
->>>>>>> master
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
