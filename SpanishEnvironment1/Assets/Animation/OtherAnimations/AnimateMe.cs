@@ -14,7 +14,6 @@ public class AnimateMe : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
     }
 
-   
 
     // Update is called once per frame
     void Update()
