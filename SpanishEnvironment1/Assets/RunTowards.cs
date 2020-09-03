@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -22,7 +22,6 @@ public class RunTowards : MonoBehaviour
     	yield return new WaitForSeconds(2f);
     	anim.SetBool("Running", true);
        	nav.destination = target.position;
-    	
     }
     // Update is called once per frame
     void Update()
