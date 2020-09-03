@@ -37,18 +37,17 @@ public class PathFinder : MonoBehaviour
     	if(nav.remainingDistance <= nav.stoppingDistance)
     	{
     		isMoving = false;
+            // anim.Play("Idle", 0, 0f);
     	}
     	else
     	{
+            print("moving");
     		isMoving = true;
+            // anim.Play("Walking", 0, 0f);
     	}
 
     	anim.SetBool("Moving", isMoving);
 
     }
 
-    void walkForward()
-    {
-
-    }
 }
