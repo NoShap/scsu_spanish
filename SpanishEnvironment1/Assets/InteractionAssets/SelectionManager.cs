@@ -12,6 +12,7 @@ public class SelectionManager : MonoBehaviour
     private bool hitSuccess;
     private bool displayGUI;
     private RaycastHit hit;
+    public Font customFont;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,19 +67,36 @@ public class SelectionManager : MonoBehaviour
                 //GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 200), hit.collider.gameObject.name + "Press X to hear Audio");
                 //create new Canvas
                 GameObject newCanvas = new GameObject("Canvas");
+                //set location of canvas
+                newCanvas.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + (float)0.5 , obj.transform.position.z);
                 Canvas c = newCanvas.AddComponent<Canvas>();
+                newCanvas.transform.SetParent(newCanvas.transform, false);
                 c.renderMode = RenderMode.WorldSpace;
-                newCanvas.AddComponent<CanvasScaler>();
-                newCanvas.GetComponent<CanvasScaler>().dynamicPixelsPerUnit = 200;
-                newCanvas.AddComponent<GraphicRaycaster>();
 
                 //set size of canvas
                 RectTransform rtc = newCanvas.GetComponent<RectTransform>();
-                rtc.sizeDelta = new Vector2(10,10);
+                rtc.sizeDelta = new Vector2(9,5);
+                rtc.localScale = new Vector3((float)0.25, (float)0.25, (float)0.25);
 
-                //create Panel
-                GameObject panel = new GameObject("Panel");
-                panel.AddComponent<CanvasRenderer>();
+
+                newCanvas.AddComponent<CanvasScaler>();
+                newCanvas.GetComponent<CanvasScaler>().referencePixelsPerUnit = 2000;
+                newCanvas.GetComponent<CanvasScaler>().dynamicPixelsPerUnit = 200;
+                
+                newCanvas.AddComponent<GraphicRaycaster>();
+
+                //add  text to UI
+                Text t = newCanvas.AddComponent<Text>();
+                t.text =  hit.collider.gameObject.name + "\n Press X to hear Audio";
+                t.font = customFont;
+                t.material = customFont.material;
+                t.fontSize = 1;
+                t.alignment = TextAnchor.MiddleCenter;
+                t.color = Color.blue;
+
+                // //create Panel
+                // GameObject panel = new GameObject("Panel");
+                // panel.AddComponent<CanvasRenderer>();
                 
                 // //Add style to panel
                 // Image i = panel.AddComponent<Image>();
@@ -86,19 +104,11 @@ public class SelectionManager : MonoBehaviour
 
                 // //set Size of panel
                 // RectTransform rt = panel.GetComponent<RectTransform>();
-                // rt.sizeDelta = new Vector2(1,1);
+                // rt.sizeDelta = new Vector2(9,5);
+                // //rt.localScale = new Vector3((float)0.25, (float)0.25, (float)0.25);
+                // panel.transform.position = new Vector3(panel.transform.position.x - (float)0.1, panel.transform.position.y, panel.transform.position.z - (float)0.1);
 
-                //add  text to UI
-                Text t = newCanvas.AddComponent<Text>();
-                t.text = hit.collider.gameObject.name + "\n Press X to hear Audio";
-                Font ArialFont = (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
-                t.font = ArialFont;
-                t.material = ArialFont.material;
-                t.fontSize = 1;
-                t.alignment = TextAnchor.MiddleCenter;
-                t.color = Color.black;
-                panel.transform.SetParent(newCanvas.transform, false);
-                
+                // panel.transform.SetParent(newCanvas.transform, false);
 
 
                 //allow GUI to follow camera
