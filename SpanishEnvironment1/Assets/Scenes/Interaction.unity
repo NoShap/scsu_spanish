@@ -739,6 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 53da4e54a529242adba04c4078789694, type: 2}
+  customFont: {fileID: 12800000, guid: 18401fcc371b240daa08b5b261f3da1d, type: 3}
 --- !u!1 &1046214634
 GameObject:
   m_ObjectHideFlags: 0
