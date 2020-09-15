@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 454546423}
   - component: {fileID: 454546422}
   - component: {fileID: 454546421}
+  - component: {fileID: 454546425}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -294,6 +295,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454546425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454546420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &599906007
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +667,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -740,6 +754,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 53da4e54a529242adba04c4078789694, type: 2}
   customFont: {fileID: 12800000, guid: 18401fcc371b240daa08b5b261f3da1d, type: 3}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc5ca710a29d4dd4bb295b3afc61bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046214634
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +778,7 @@ GameObject:
   - component: {fileID: 1046214637}
   - component: {fileID: 1046214636}
   - component: {fileID: 1046214635}
+  - component: {fileID: 1046214639}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -835,6 +862,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1046214639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046214634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!850595691 &2136654943
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1002,7 +1041,7 @@ GameObject:
   - component: {fileID: 1587545474759658605}
   - component: {fileID: 8164078558529651337}
   m_Layer: 0
-  m_Name: default
+  m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
