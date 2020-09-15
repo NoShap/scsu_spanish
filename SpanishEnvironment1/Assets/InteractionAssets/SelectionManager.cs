@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour
 {
+    private bool firstObjectHit = false;
+    private bool objectSet = false;
     private GameObject obj;  //stores the most recent past object to be hit
     private Renderer objRenderer;
-	public Material highlightMaterial;
+    public Material highlightMaterial;
     private Material oldMtl;
     private bool hitSuccess;
     private bool displayGUI;
@@ -17,77 +19,79 @@ public class SelectionManager : MonoBehaviour
     void Start()
     {
         displayGUI = false;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         hitSuccess = false;
-
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit))
+
+        // When target object hit
+        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.GetComponent<LanguageObserverTarget>() != null)
         {
-            if(obj != hit.collider.gameObject)//If we're not pointing at the previous target
-             {
-                   if(obj != null)//If previous target is set, reset its material
-                    {
-                     objRenderer.material = oldMtl;
-                    }
-                    obj = hit.collider.gameObject;//Store reference of target to a variable
-                    objRenderer = obj.GetComponent<Renderer>();//Get targets Renderer
-
-                    oldMtl = objRenderer.material;//Store targets current material
-             }
-
-            //sets newly hit object's material
-            var selection = hit.transform;
-            var selectionRenderer = selection.GetComponent<Renderer>();
-            if(selectionRenderer != null)
+            obj = hit.collider.gameObject;
+            if (obj != null && !objectSet)
             {
-                selectionRenderer.material = highlightMaterial;
+                objectSet = true;
+                firstObjectHit = true;
                 hitSuccess = true;
+                objRenderer = obj.GetComponent<Renderer>();
+                oldMtl = objRenderer.material;
+                print("Material stored:, " + oldMtl.name);
+                objRenderer.material = highlightMaterial;
             }
         }
+
+        //When not hitting
         else
         {
-            //if the raycaster isn't hitting anything, remove all GUIs currently displayed
-            //ensures only one GUI is seen at a time
-            displayGUI = false;
-            Destroy (GameObject.Find ("Canvas"));
+            if (objectSet)
+            {
+                if (firstObjectHit)
+                {
+                    print("Material fetched:" + oldMtl.name);
+                    objRenderer.material = oldMtl;
+                }
+                //destroy canvasses
+                displayGUI = false;
+                Destroy(GameObject.Find("Canvas"));
+                objectSet = false;
+            }
         }
     }
 
-    void OnGUI ()
+    void OnGUI()
     {
-         if(hitSuccess)
-         {
-             if(!displayGUI) //if the GUI isn't already displaying
-             {
+        if (hitSuccess)
+        {
+            if (!displayGUI) //if the GUI isn't already displaying
+            {
                 //GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 200), hit.collider.gameObject.name + "Press X to hear Audio");
                 //create new Canvas
                 GameObject newCanvas = new GameObject("Canvas");
                 //set location of canvas
-                newCanvas.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + (float)0.5 , obj.transform.position.z);
+                newCanvas.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + (float)0.5, obj.transform.position.z);
                 Canvas c = newCanvas.AddComponent<Canvas>();
                 newCanvas.transform.SetParent(newCanvas.transform, false);
                 c.renderMode = RenderMode.WorldSpace;
 
                 //set size of canvas
                 RectTransform rtc = newCanvas.GetComponent<RectTransform>();
-                rtc.sizeDelta = new Vector2(9,5);
+                rtc.sizeDelta = new Vector2(9, 5);
                 rtc.localScale = new Vector3((float)0.25, (float)0.25, (float)0.25);
 
 
                 newCanvas.AddComponent<CanvasScaler>();
                 newCanvas.GetComponent<CanvasScaler>().referencePixelsPerUnit = 2000;
                 newCanvas.GetComponent<CanvasScaler>().dynamicPixelsPerUnit = 200;
-                
+
                 newCanvas.AddComponent<GraphicRaycaster>();
 
                 //add  text to UI
                 Text t = newCanvas.AddComponent<Text>();
-                t.text =  hit.collider.gameObject.name + "\n Press X to hear Audio";
+                t.text = hit.collider.gameObject.name + "\n Press X to hear Audio";
                 t.font = customFont;
                 t.material = customFont.material;
                 t.fontSize = 1;
@@ -97,7 +101,7 @@ public class SelectionManager : MonoBehaviour
                 // //create Panel
                 // GameObject panel = new GameObject("Panel");
                 // panel.AddComponent<CanvasRenderer>();
-                
+
                 // //Add style to panel
                 // Image i = panel.AddComponent<Image>();
                 // i.color = Color.white;
@@ -117,8 +121,8 @@ public class SelectionManager : MonoBehaviour
 
                 //indicate we're currently displaying a GUI
                 displayGUI = true;
-             }
-         }
+            }
+        }
     }
 }
 
