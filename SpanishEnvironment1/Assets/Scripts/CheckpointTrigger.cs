@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CheckpointTrigger : MonoBehaviour
 {
-    
+    public bool hasReached = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class CheckpointTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
       print("Checkpoint Reached");
+      hasReached = true;
       this.gameObject.SetActive(false);
     }
 }
