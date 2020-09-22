@@ -2718,6 +2718,18 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: Fuego
+    clip: {fileID: 8300000, guid: 45fd72f6762f048829b7aaa8a611f929, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Volley
+    clip: {fileID: 8300000, guid: ee2892c0121d44df38479e36c1519487, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &515429969
 Transform:
   m_ObjectHideFlags: 0
