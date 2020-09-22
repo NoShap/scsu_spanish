@@ -7,11 +7,13 @@ public class AnimateMe : MonoBehaviour
     //initialize a general animator variable (this will communicate with our animator window!)
     private Animator anim;
     public string animation;
+    private AudioManager audio;
     
     void Start()
     {
         //store this gameobject's Animator in the variable we just initialized 
         anim = gameObject.GetComponent<Animator>();
+        audio = FindObjectOfType<AudioManager>();
     }
 
    
@@ -20,13 +22,23 @@ public class AnimateMe : MonoBehaviour
     void Update()
     {
         //Input.GetKet() takes in a string that contains the information 
-        if (Input.GetKey("space")) { 
-            anim.SetBool(animation, true);
+        if (Input.GetKey("l")) { 
+
+            StartCoroutine(fireRoutine());
         }
         // else
         // {
         //     anim.SetBool(animation, false);
         // }
         
+    }
+
+    IEnumerator fireRoutine()
+    {
+      audio.Play("Fuego");
+      yield return new WaitForSeconds(2f);
+      audio.Play("Volley");
+      yield return new WaitForSeconds(0.1f);
+      anim.SetBool(animation, true);
     }
 }
