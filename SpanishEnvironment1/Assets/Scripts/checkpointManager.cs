@@ -9,6 +9,8 @@ public class checkpointManager : MonoBehaviour
     private double currStage = 0f;
     public GameObject checkpointPrefab;
     private GameObject currCheckpoint;
+    public GameObject door;
+
     
 
     /*
@@ -47,7 +49,7 @@ public class checkpointManager : MonoBehaviour
             if(currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true) //if player has reached the checkpoint, destroy this instance of the checkpoint prefab and display new instructions
             {
                 Destroy(currCheckpoint);
-                GameObject.Find("UI").GetComponent<Text>().text = "\n Pick up a Tray. Press x to continue";
+                GameObject.Find("UI").GetComponent<Text>().text = "\n Select the apple and the potatoes and add them to the tray. Press x to continue";
                 currStage = 2.2f;
             }
         }
@@ -67,6 +69,8 @@ public class checkpointManager : MonoBehaviour
         {
             if(currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true) 
             {
+
+                StartCoroutine("GiveFood");
                 GameObject.Find("UI").GetComponent<Text>().text = "\n Task Complete. You may now Explore the Map.";
                 currStage = 2.4f;
             }
@@ -87,6 +91,18 @@ public class checkpointManager : MonoBehaviour
                 currStage = 2.6f;
             }
         }
+
+    }
+
+    IEnumerator GiveFood()
+    {
+        door.GetComponent<Animator>().Play("door open", 0, 0f);
+        door.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(3f);
+        door.GetComponent<Animator>().Play("door close", 0, 0f);
+        door.GetComponent<AudioSource>().Play();
+        
+        yield break;
 
     }
 
