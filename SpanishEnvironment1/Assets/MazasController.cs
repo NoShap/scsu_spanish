@@ -25,6 +25,7 @@ public class MazasController : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
 
@@ -33,13 +34,15 @@ public class MazasController : MonoBehaviour
         {
             if (anim.GetBool("Walking"))
             {
+                print("reached spot walking");
                 print("Remaining:" + nav.remainingDistance);
                 print("Stopping:" + nav.stoppingDistance);
                 destinations.RemoveAt(0);
                 anim.SetBool("Walking", false);
+                nav.Stop();
             }
-
         }
+
         // move Sanchez Mazas
         if (Input.GetKey("m"))
         {
@@ -48,18 +51,17 @@ public class MazasController : MonoBehaviour
                 doorOpened = true;
                 door.GetComponent<Animator>().Play("door open", 0, 0f);
                 door.GetComponent<AudioSource>().Play();
-                //nav.destination = destinations[0].position;
-
-                anim.SetBool("Walking", true);
             }
-            nav.destination = destinations[0].position;
-            FindObjectOfType<AudioManager>().Play("Move");
-            //SHORTEN
-            //Fetch the current Animation clip information for the base layer
-            m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
-            //Access the current length of the clip
-            string m_ClipName = m_CurrentClipInfo[0].clip.name;
-            anim.Play(m_ClipName, 0, 0.9f);
+            if (doorOpened)
+            {
+                anim.SetBool("Walking", true);
+                nav.destination = destinations[0].position;
+                nav.Resume();
+                FindObjectOfType<AudioManager>().Play("Move");
+                //Fetch the current Animation clip information for the base layer
+                m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
+                anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
+            }
         }
 
         if (Input.GetKey("g"))
