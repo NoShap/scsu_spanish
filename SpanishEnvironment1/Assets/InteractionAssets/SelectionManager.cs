@@ -15,9 +15,6 @@ public class SelectionManager : MonoBehaviour
     private bool displayGUI;
     private RaycastHit hit;
     public Font customFont;
-    public Camera customCamera;
-    public int numObserved = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +26,7 @@ public class SelectionManager : MonoBehaviour
     void Update()
     {
         hitSuccess = false;
-        var ray = customCamera.ScreenPointToRay(Input.mousePosition);
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         // When target object hit
         if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.GetComponent<LanguageObserverTarget>() != null)
@@ -44,7 +41,6 @@ public class SelectionManager : MonoBehaviour
                 oldMtl = objRenderer.material;
                 print("Material stored:, " + oldMtl.name);
                 objRenderer.material = highlightMaterial;
-                numObserved += 1;
             }
         }
 
@@ -121,7 +117,7 @@ public class SelectionManager : MonoBehaviour
 
                 //allow GUI to follow camera
                 newCanvas.AddComponent<followCamera>();
-                newCanvas.GetComponent<followCamera>().m_Camera = customCamera;
+                newCanvas.GetComponent<followCamera>().m_Camera = Camera.main;
 
                 //indicate we're currently displaying a GUI
                 displayGUI = true;
