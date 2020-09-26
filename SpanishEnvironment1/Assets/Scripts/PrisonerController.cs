@@ -15,10 +15,17 @@ public class PrisonerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
+        nav.speed = 0.5f;
+        nav.stoppingDistance = 0.3f;
     }
     IEnumerator LineUp()
     {
-        yield return new WaitForSeconds(6f);
+        anim.SetBool("Walking", true);
+        yield return new WaitForSeconds(3f);
+        anim.SetBool("Sitting", false);
+        yield return new WaitForSeconds(2f);
+        m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
+        anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
         startMoving = true;
     }
 
@@ -26,28 +33,31 @@ public class PrisonerController : MonoBehaviour
     {
         if (Input.GetKey("i"))
         {
-            // m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
-            // anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
+            m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
+            anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
             if (mobile)
             {
-                anim.SetBool("Sitting", false);
                 door.GetComponent<Animator>().Play("door open", 0, 0f);
                 door.GetComponent<AudioSource>().Play();
                 StartCoroutine(LineUp());
             }
         }
-        print(startMoving);
         if (startMoving)
         {
-            anim.SetBool("Walking", true);
-            while (destinations.Count != 0)
+
+            if (nav.remainingDistance <= nav.stoppingDistance)
             {
-                nav.destination = destinations[0].position;
-                if (nav.stoppingDistance <= nav.remainingDistance)
+                if (destinations.Count != 0)
                 {
-                    print("remove Destination: " + nav.remainingDistance + nav.stoppingDistance);
+                    nav.destination = destinations[0].position;
                     destinations.RemoveAt(0);
+
                 }
+                else
+                {
+                    anim.SetBool("Walking", false);
+                }
+
             }
         }
     }
