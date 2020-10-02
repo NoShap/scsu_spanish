@@ -17,6 +17,7 @@ public class PrisonerController : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         nav.speed = 0.5f;
         nav.stoppingDistance = 0.3f;
+        nav.radius = 0.6f;
     }
     IEnumerator LineUp()
     {
@@ -57,9 +58,11 @@ public class PrisonerController : MonoBehaviour
                 {
                     anim.SetBool("Walking", false);
                 }
-
+            }
+            else
+            {
+                anim.SetBool("Walking", true);
             }
         }
     }
-
 }
