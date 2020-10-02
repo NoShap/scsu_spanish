@@ -11,7 +11,7 @@ public class checkpointManager : MonoBehaviour
     private GameObject currCheckpoint;
     public GameObject door;
 
-    
+
 
     /*
         Numeric Stages : Player progress in game
@@ -30,10 +30,10 @@ public class checkpointManager : MonoBehaviour
     //i guess this will have to look like a State Machine
     void Update()
     {
-         
-        if(currStage == 2f) //beginning food delivery task
+
+        if (currStage == 2f) //beginning food delivery task
         {
-            if(Input.GetKeyDown("1"))
+            if (Input.GetKeyDown("1"))
             {
                 //display text
                 GameObject.Find("UI").GetComponent<Text>().text = "\n Proceed to the Food Pickup Area outside the prison.";
@@ -44,18 +44,19 @@ public class checkpointManager : MonoBehaviour
                 currStage = 2.1f;
             }
         }
-        if(currStage == 2.1f)
+        //Start interaction with guard
+        if (currStage == 2.1f)
         {
-            if(currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true) //if player has reached the checkpoint, destroy this instance of the checkpoint prefab and display new instructions
+            if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true) //if player has reached the checkpoint, destroy this instance of the checkpoint prefab and display new instructions
             {
                 Destroy(currCheckpoint);
                 GameObject.Find("UI").GetComponent<Text>().text = "\n Select the apple and the potatoes and add them to the tray. Press x to continue";
                 currStage = 2.2f;
             }
         }
-        if(currStage == 2.2f)
+        if (currStage == 2.2f)
         {
-            if(Input.GetKeyDown("x"))
+            if (Input.GetKeyDown("x"))
             {
                 GameObject.Find("UI").GetComponent<Text>().text = "\n Deliver the tray to Sanchez Mazas' prison cell.";
                 //instantiate a checkpoint by Sanchez Mazas' Cell
@@ -65,9 +66,9 @@ public class checkpointManager : MonoBehaviour
                 currStage = 2.3f;
             }
         }
-        if(currStage == 2.3f)
+        if (currStage == 2.3f)
         {
-            if(currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true) 
+            if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true)
             {
 
                 StartCoroutine("GiveFood");
@@ -75,17 +76,17 @@ public class checkpointManager : MonoBehaviour
                 currStage = 2.4f;
             }
         }
-         if(currStage == 2.4f)
+        if (currStage == 2.4f)
         {
-            if(Input.GetKeyDown("5")) //to be changed to colliding w/ checkpoint
+            if (Input.GetKeyDown("5")) //to be changed to colliding w/ checkpoint
             {
                 GameObject.Find("UI").GetComponent<Text>().text = "\n Explore the map.";
                 currStage = 2.5f;
             }
         }
-         if(currStage == 2.5f)
+        if (currStage == 2.5f)
         {
-            if(Input.GetKeyDown("6")) //to be changed to colliding w/ checkpoint
+            if (Input.GetKeyDown("6")) //to be changed to colliding w/ checkpoint
             {
                 Destroy(GameObject.Find("FoodTray"));
                 currStage = 2.6f;
@@ -101,10 +102,10 @@ public class checkpointManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         door.GetComponent<Animator>().Play("door close", 0, 0f);
         door.GetComponent<AudioSource>().Play();
-        
+
         yield break;
 
     }
 
-    
+
 }

@@ -52,7 +52,6 @@ public class PrisonerController : MonoBehaviour
                 {
                     nav.destination = destinations[0].position;
                     destinations.RemoveAt(0);
-
                 }
                 else
                 {
