@@ -2448,6 +2448,36 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: d0
+    clip: {fileID: 8300000, guid: 5322f5971677d4abebc4020589be19e0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d1
+    clip: {fileID: 8300000, guid: 4ec179fdd2ba74f56ac8b3514cc08525, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d2
+    clip: {fileID: 8300000, guid: 06ce0e7f01dd64794b27729244254bba, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d3
+    clip: {fileID: 8300000, guid: fd4a9cde17e2a4747bd4373e3be4f104, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d4
+    clip: {fileID: 8300000, guid: 850c8659c94a44fa1818c63e89e63e0e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &515429969
 Transform:
   m_ObjectHideFlags: 0
