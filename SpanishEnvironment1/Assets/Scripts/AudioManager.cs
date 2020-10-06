@@ -29,6 +29,13 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+
+    public AudioClip GetClip(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        return s.source.clip;
+    }
+
     // Update is called once per frame
     void Update()
     {
