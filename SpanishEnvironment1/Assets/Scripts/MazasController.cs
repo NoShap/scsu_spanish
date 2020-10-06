@@ -18,6 +18,13 @@ public class MazasController : MonoBehaviour
     AnimatorClipInfo[] m_CurrentClipInfo;
     [SerializeField] Transform finalDest;
 
+    private Text uI;
+    private AudioManager audioManager;
+
+    private int conversationCounter = 0;
+    private string[] conversationLines = {"Diga: Hola, ¿como está?", "\"Tengo hambre\"", "Pregúntele: ¿Que quiere que le traiga?", "\"Comería qualquier cosa\"", "Diga: Ok, le traigo una bandeja de comida"};
+    private string[] audioLines = {"d0", "d1", "d2", "d3", "d4"};
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +32,8 @@ public class MazasController : MonoBehaviour
         up = false;
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
+        uI = GameObject.Find("UI").GetComponent<Text>();
+        audioManager = FindObjectOfType<AudioManager>();
         // nav.destination = destinations[0].position;
     }
 
@@ -56,8 +65,8 @@ public class MazasController : MonoBehaviour
             {
                 anim.SetBool("Running", false);
                 anim.Play("Terrified");
-                GameObject.Find("UI").GetComponent<Text>().text = "\n Pregúntele a donde va con la frase siquienta: \n ¿A donde va usted?";
-                FindObjectOfType<AudioManager>().Play("DondeVa");  
+                uI.text = "\n Pregúntele a donde va con la frase siquIenta: \n ¿A donde va usted?";
+                audioManager.Play("DondeVa");  
             }
 
         }
@@ -71,11 +80,12 @@ public class MazasController : MonoBehaviour
         {
             up = true;
             anim.SetBool("Sitting", false);
-            FindObjectOfType<AudioManager>().Play("Get");
+            audioManager.Play("Get");
+            uI.text = "Pulse la tecla 'b' para comenzar una conversacion";
         }
         if (Input.GetKey("t"))
         {
-            FindObjectOfType<AudioManager>().Play("Tree");
+            audioManager.Play("Tree");
         }
         if (Input.GetKey("c"))
         {
@@ -95,6 +105,10 @@ public class MazasController : MonoBehaviour
           nav.speed = 5f;
           nav.destination = finalDest.position;
         }
+        if (Input.GetKeyDown("b"))
+        {
+          StartCoroutine(conversate1());
+        }
 
     }
 
@@ -111,7 +125,7 @@ public class MazasController : MonoBehaviour
             }
             anim.SetBool("Walking", true);
             nav.destination = destinations[0].position;
-            FindObjectOfType<AudioManager>().Play("Move");
+            audioManager.Play("Move");
             //SHORTEN
             //Fetch the current Animation clip information for the base layer
             m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
@@ -128,5 +142,20 @@ public class MazasController : MonoBehaviour
       anim.SetBool("Running", true);
       yield return new WaitForSeconds(3f);
       shotsFired = true;
+    }
+
+    IEnumerator conversate1()
+    {
+      if (conversationCounter < conversationLines.Length)
+      {
+        uI.text = conversationLines[conversationCounter];
+        yield return new WaitForSeconds(1f);
+        audioManager.Play(audioLines[conversationCounter]);
+        conversationCounter++;
+      }
+      else
+      {
+        uI.text = "";
+      }
     }
 }
