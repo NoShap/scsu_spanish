@@ -76,12 +76,12 @@ public class MazasController : MonoBehaviour
             nextDestination();
         }
 
-        if (Input.GetKey("g"))
+        if (Input.GetKeyDown("g"))
         {
             up = true;
             anim.SetBool("Sitting", false);
             audioManager.Play("Get");
-            uI.text = "Pulse la tecla 'b' para comenzar una conversacion";
+            uI.text = "\n Pulse la tecla 'b' para comenzar una conversacion";
         }
         if (Input.GetKey("t"))
         {
@@ -148,7 +148,7 @@ public class MazasController : MonoBehaviour
     {
       if (conversationCounter < conversationLines.Length)
       {
-        uI.text = conversationLines[conversationCounter];
+        uI.text = "\n " + conversationLines[conversationCounter];
         yield return new WaitForSeconds(1f);
         audioManager.Play(audioLines[conversationCounter]);
         conversationCounter++;

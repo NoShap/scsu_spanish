@@ -2396,7 +2396,7 @@ MonoBehaviour:
     loop: 0
   - name: Get
     clip: {fileID: 8300000, guid: c11d2294e2edf4437b08add051368d04, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -2414,6 +2414,36 @@ MonoBehaviour:
     loop: 0
   - name: DondeVa
     clip: {fileID: 8300000, guid: 4a2ee6492866a401d94b3f360382b89e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d0
+    clip: {fileID: 8300000, guid: 5322f5971677d4abebc4020589be19e0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d1
+    clip: {fileID: 8300000, guid: 4ec179fdd2ba74f56ac8b3514cc08525, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d2
+    clip: {fileID: 8300000, guid: 06ce0e7f01dd64794b27729244254bba, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d3
+    clip: {fileID: 8300000, guid: fd4a9cde17e2a4747bd4373e3be4f104, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: d4
+    clip: {fileID: 8300000, guid: 850c8659c94a44fa1818c63e89e63e0e, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -4837,7 +4867,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b23df7320d61341eb822b3d5920b5e67, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.51
   m_Pitch: 1
   Loop: 0
   Mute: 0
