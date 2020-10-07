@@ -6,6 +6,18 @@ using UnityEngine.UI;
 
 public class checkpointManager : MonoBehaviour
 {
+    enum stage
+    {
+        fadeIn, // screen goes from black to full brightness
+        voiceOver1, //historical intro
+        dialogue1, //talk with Sanchez Mazas
+        voiceOver2, //explaining checkpoints and tasks
+        task1, // get food for Sanchez Mazas 
+        voiceOver3, //explaining languageObserver
+        dialogue2, //dialogue with food delivery guard
+        task2, // pick up food and receive directive to return to SM
+
+    }
     private double currStage = 0f;
     public GameObject checkpointPrefab;
     private GameObject currCheckpoint;
