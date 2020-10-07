@@ -21,9 +21,7 @@ public class MazasController : MonoBehaviour
     private Text uI;
     private AudioManager audioManager;
 
-    private int conversationCounter = 0;
-    private string[] conversationLines = {"Diga: Hola, ¿como está?", "\"Tengo hambre\"", "Pregúntele: ¿Que quiere que le traiga?", "\"Comería qualquier cosa\"", "Diga: Ok, le traigo una bandeja de comida"};
-    private string[] audioLines = {"d0", "d1", "d2", "d3", "d4"};
+  
 
     // Start is called before the first frame update
     void Start()
@@ -105,10 +103,7 @@ public class MazasController : MonoBehaviour
           nav.speed = 5f;
           nav.destination = finalDest.position;
         }
-        if (Input.GetKeyDown("b"))
-        {
-          StartCoroutine(conversate1());
-        }
+        
 
     }
 
@@ -144,18 +139,4 @@ public class MazasController : MonoBehaviour
       shotsFired = true;
     }
 
-    IEnumerator conversate1()
-    {
-      if (conversationCounter < conversationLines.Length)
-      {
-        uI.text = "\n " + conversationLines[conversationCounter];
-        yield return new WaitForSeconds(1f);
-        audioManager.Play(audioLines[conversationCounter]);
-        conversationCounter++;
-      }
-      else
-      {
-        uI.text = "";
-      }
-    }
 }
