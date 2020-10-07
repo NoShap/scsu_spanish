@@ -16,7 +16,13 @@ public class checkpointManager : MonoBehaviour
         voiceOver3, //explaining languageObserver
         dialogue2, //dialogue with food delivery guard
         task2, // pick up food and receive directive to return to SM
-
+        dialogue3, //talk with Sanchez Mazas 
+        event1, //watching prisoners be escorted out
+        dialogue4, //tell Sanchez Mazas to get up and move outside
+        event2, // Sanchez Mazas runs away
+        dialogue5, // confront Sanchez Mazas
+        voiceOver4, //consequences
+        fadeOut,
     }
     private double currStage = 0f;
     public GameObject checkpointPrefab;

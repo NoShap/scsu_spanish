@@ -16,6 +16,7 @@ Prison Escape Scene Steps/Order
 
 10) While other prisoners are moving away, SM runs
 11) Dialogue 5 Confront SM 
-11.5) (VOICE OVER 4)
+11.5) (VOICE OVER 4) consequences of actions
+
 12) --- Fade Out --- 
-13) Epilogue of the Scene (VOICE OVER WITH ENDING)
+13) Epilogue of the Scene (VOICE OVER 5 WITH ENDING) with learning review
