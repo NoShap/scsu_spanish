@@ -15,6 +15,9 @@ public class SelectionManager : MonoBehaviour
     private bool displayGUI;
     private RaycastHit hit;
     public Font customFont;
+    private bool notPlaying = true; //checks if an audio file is currently playing
+    public AudioManager WordAudioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,14 @@ public class SelectionManager : MonoBehaviour
                 print("Material stored:, " + oldMtl.name);
                 objRenderer.material = highlightMaterial;
             }
+
+             //allow player to hear audio when 'x' key is pressed
+             //allow this any number of times as long as they're still looking at the object
+             if(Input.GetKeyDown("x") && notPlaying)
+             {
+                 StartCoroutine(PlayAudio(obj));
+             }
+
         }
 
         //When not hitting
@@ -60,6 +71,16 @@ public class SelectionManager : MonoBehaviour
                 objectSet = false;
             }
         }
+    }
+
+    IEnumerator PlayAudio(GameObject obj)
+    {
+        notPlaying = false;
+        WordAudioManager.Play(obj.name);
+        AudioClip aud = WordAudioManager.GetClip(obj.name);
+        yield return new WaitForSeconds(aud.length + 1f);
+        notPlaying = true;
+        
     }
 
     void OnGUI()
