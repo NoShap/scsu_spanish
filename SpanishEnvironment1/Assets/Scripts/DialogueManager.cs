@@ -20,7 +20,6 @@ public class DialogueManager : MonoBehaviour
         uI = GameObject.Find("UI").GetComponent<Text>();
         audioManager = FindObjectOfType<AudioManager>();
     }
-
     // Update is called once per frame
     void Update()
     {

@@ -42,16 +42,15 @@ public class SelectionManager : MonoBehaviour
                 hitSuccess = true;
                 objRenderer = obj.GetComponent<Renderer>();
                 oldMtl = objRenderer.material;
-                print("Material stored:, " + oldMtl.name);
                 objRenderer.material = highlightMaterial;
             }
 
-             //allow player to hear audio when 'x' key is pressed
-             //allow this any number of times as long as they're still looking at the object
-             if(Input.GetKeyDown("x") && notPlaying)
-             {
-                 StartCoroutine(PlayAudio(obj));
-             }
+            //allow player to hear audio when 'x' key is pressed
+            //allow this any number of times as long as they're still looking at the object
+            if (Input.GetKeyDown("x") && notPlaying)
+            {
+                StartCoroutine(PlayAudio(obj));
+            }
 
         }
 
@@ -62,7 +61,6 @@ public class SelectionManager : MonoBehaviour
             {
                 if (firstObjectHit)
                 {
-                    print("Material fetched:" + oldMtl.name);
                     objRenderer.material = oldMtl;
                 }
                 //destroy canvasses
@@ -76,11 +74,12 @@ public class SelectionManager : MonoBehaviour
     IEnumerator PlayAudio(GameObject obj)
     {
         notPlaying = false;
-        WordAudioManager.Play(obj.name);
-        AudioClip aud = WordAudioManager.GetClip(obj.name);
+        string name = obj.name.ToLower();
+        WordAudioManager.Play(name);
+        AudioClip aud = WordAudioManager.GetClip(name);
         yield return new WaitForSeconds(aud.length + 1f);
         notPlaying = true;
-        
+
     }
 
     void OnGUI()
