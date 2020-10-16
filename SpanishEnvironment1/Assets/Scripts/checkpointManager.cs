@@ -29,9 +29,9 @@ public class checkpointManager : MonoBehaviour
     public GameObject checkpointPrefab;
     private GameObject currCheckpoint;
     public GameObject door;
-    private AudioManager audio_manager;
-    private GameObject dialogueManager;
-    private DialogueManager dialogue1;
+    public AudioManager audio_manager;
+    private GameObject dialogueObject;
+    private DialogueManager dialogueManager;
     bool stageOpen = true;
 
 
@@ -39,10 +39,9 @@ public class checkpointManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio_manager = FindObjectOfType<AudioManager>();
+        dialogueObject = GameObject.Find("DialogueManager");
+        dialogueManager = dialogueObject.GetComponent<DialogueManager>();
         currStage = stage.voiceOver1; //should eventually be set to fadeIn
-        // dialogueManager = GameObject.Find("Dialogue1");
-        // dialogue1 = dialogueManager.GetComponent<DialogueManager>();
     }
 
     // Update is called once per frame
@@ -65,9 +64,7 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
-            //dialogue1.curDialogue = 1;
-            //get something that increments curr stage 
-
+            dialogueManager.startDialogue(0);
         }
         // Stage 2
         if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task

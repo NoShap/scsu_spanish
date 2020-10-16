@@ -488,13 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
 --- !u!1 &112994988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,13 +1413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
 --- !u!65 &264688805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2496,7 +2482,7 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver1
-    clip: {fileID: 8300000, guid: f9d9e20fb36a84d35be18372d836f71c, type: 3}
+    clip: {fileID: 8300000, guid: 21b4de2c796a74a65ab884ee022e0e77, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -2981,7 +2967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &566280056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3045,7 +3031,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588693010
 GameObject:
@@ -3774,7 +3760,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877168696
 GameObject:
@@ -4129,13 +4115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: la patata
-    clip: {fileID: 8300000, guid: 13d6feac6fcbc4221a079a39d6371b6a, type: 3}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
 --- !u!64 &980111473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4337,13 +4316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
 --- !u!1001 &1039236019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4538,13 +4510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: la patata
-    clip: {fileID: 8300000, guid: 13d6feac6fcbc4221a079a39d6371b6a, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
 --- !u!1 &1099353409
 GameObject:
   m_ObjectHideFlags: 0
@@ -8176,7 +8141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1933653476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8240,7 +8205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971285282
 GameObject:
@@ -8662,13 +8627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: la manzana
-    clip: {fileID: 8300000, guid: 592b3ad8a85d64f8daf0b9234f0037a3, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
 --- !u!54 &2070667331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8860,13 +8818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: el pan
-    clip: {fileID: 8300000, guid: 08cffed2c8e2e4713a07c7e5e9cfa6ef, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
 --- !u!4 &2102015156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d5a81550f262490eb2a70dbbca9e3f8,
