@@ -24,12 +24,17 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
         print("Dialogue Completed, moving to next dialogue.");
+        dialogues[dialogueIndex].SetActive(false);
         isRunning = false;
     }
 
     public void startDialogue(int dialogueIndex)
     {
-        StartCoroutine(playActiveDialogue(dialogueIndex));
+
+        if (!isRunning)
+        {
+            StartCoroutine(playActiveDialogue(dialogueIndex));
+        }
     }
 
     void Update()

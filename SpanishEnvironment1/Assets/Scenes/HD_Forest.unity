@@ -2482,8 +2482,8 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver1
-    clip: {fileID: 8300000, guid: 21b4de2c796a74a65ab884ee022e0e77, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    volume: 0.93
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -3014,11 +3014,11 @@ MonoBehaviour:
   dialogueFinished: 0
   playerSpeaking: 1
   conversationLines:
-  - "Diga: Hola, \xBFcomo est\xE1?"
-  - '"Tengo hambre"'
-  - "Preg\xFAntele: \xBFQue quiere que le traiga?"
-  - "\"Comer\xEDa qualquier cosa\""
-  - 'Diga: Ok, le traigo una bandeja de comida'
+  - Randome ness
+  - NPC Randomness
+  - Back to the player
+  - blah
+  - blah blah
 --- !u!4 &566280057
 Transform:
   m_ObjectHideFlags: 0

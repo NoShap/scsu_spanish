@@ -65,6 +65,8 @@ public class checkpointManager : MonoBehaviour
         if (currStage == stage.dialogue1 && stageOpen)
         {
             dialogueManager.startDialogue(0);
+            //+ activate guard walking over
+            dialogueManager.startDialogue(1);
         }
         // Stage 2
         if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task
