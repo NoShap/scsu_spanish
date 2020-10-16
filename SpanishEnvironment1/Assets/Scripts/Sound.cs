@@ -14,5 +14,4 @@ public class Sound
     public AudioSource source;
     public bool loop;
 
-
 }

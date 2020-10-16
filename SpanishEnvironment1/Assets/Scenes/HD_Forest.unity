@@ -388,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 53da4e54a529242adba04c4078789694, type: 2}
   customFont: {fileID: 12800000, guid: 18401fcc371b240daa08b5b261f3da1d, type: 3}
+  WordAudioManager: {fileID: 365996984}
 --- !u!1 &49913108
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +488,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pronunciation:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
 --- !u!1 &112994988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1420,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pronunciation:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
 --- !u!65 &264688805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1818,6 +1833,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355716484}
   m_Mesh: {fileID: -7376735546934131138, guid: 5d03b66e9d53b4d2893c7e89ede30fb8, type: 3}
+--- !u!1 &365996983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365996985}
+  - component: {fileID: 365996984}
+  m_Layer: 0
+  m_Name: WordAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &365996984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365996983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42f3bc9d956d4a7b92c0ae1fdaea6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: la manzana
+    clip: {fileID: 8300000, guid: 592b3ad8a85d64f8daf0b9234f0037a3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: la patata
+    clip: {fileID: 8300000, guid: 13d6feac6fcbc4221a079a39d6371b6a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: el pan
+    clip: {fileID: 8300000, guid: 08cffed2c8e2e4713a07c7e5e9cfa6ef, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+--- !u!4 &365996985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365996983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 121.464264, y: 9.247177, z: 140.99106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398268549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,6 +4129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pronunciation:
+    name: la patata
+    clip: {fileID: 8300000, guid: 13d6feac6fcbc4221a079a39d6371b6a, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
 --- !u!64 &980111473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4253,6 +4337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pronunciation:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
 --- !u!1001 &1039236019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4447,6 +4538,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pronunciation:
+    name: la patata
+    clip: {fileID: 8300000, guid: 13d6feac6fcbc4221a079a39d6371b6a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!1 &1099353409
 GameObject:
   m_ObjectHideFlags: 0
@@ -7877,6 +7975,7 @@ MonoBehaviour:
   checkpointPrefab: {fileID: 2822937831766762642, guid: c339ca409d6a64f2787512acad05f0b2,
     type: 3}
   door: {fileID: 2060825144}
+  audio_manager: {fileID: 515429968}
 --- !u!1001 &1888033813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8563,6 +8662,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pronunciation:
+    name: la manzana
+    clip: {fileID: 8300000, guid: 592b3ad8a85d64f8daf0b9234f0037a3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!54 &2070667331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8754,6 +8860,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pronunciation:
+    name: el pan
+    clip: {fileID: 8300000, guid: 08cffed2c8e2e4713a07c7e5e9cfa6ef, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &2102015156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d5a81550f262490eb2a70dbbca9e3f8,
@@ -9198,6 +9311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 53da4e54a529242adba04c4078789694, type: 2}
   customFont: {fileID: 12800000, guid: 18401fcc371b240daa08b5b261f3da1d, type: 3}
+  WordAudioManager: {fileID: 365996984}
 --- !u!1 &2145833666
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class checkpointManager : MonoBehaviour
 {
-
     public enum stage
     {
         fadeIn, // screen goes from black to full brightness
