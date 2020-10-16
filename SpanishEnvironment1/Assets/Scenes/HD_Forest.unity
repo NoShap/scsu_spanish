@@ -488,13 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
 --- !u!1 &112994988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,13 +1413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
 --- !u!65 &264688805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3045,7 +3031,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588693010
 GameObject:
@@ -3774,7 +3760,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877168696
 GameObject:
@@ -4129,13 +4115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: la patata
-    clip: {fileID: 8300000, guid: 13d6feac6fcbc4221a079a39d6371b6a, type: 3}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
 --- !u!64 &980111473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4337,13 +4316,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: 
-    clip: {fileID: 0}
+--- !u!1 &1029712364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029712366}
+  - component: {fileID: 1029712365}
+  m_Layer: 0
+  m_Name: Dialogue4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1029712365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029712364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453c0740d8c784d88835afc49b7bf621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 
+    clip: {fileID: 8300000, guid: 04594f385d6134608a0c742fe1eb38db, type: 3}
     volume: 0
     pitch: 0
     source: {fileID: 0}
     loop: 0
+  - name: 
+    clip: {fileID: 8300000, guid: c4ba225659c294b3dbb5c99770f90a1e, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  dialogueFinished: 0
+  playerSpeaking: 0
+  conversationLines:
+  - "\"Ll\xE9vele la bandeja\""
+  - "Agrad\xE9zcale"
+--- !u!4 &1029712366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029712364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 89.268036, y: -4.827816, z: 137.73355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1039236019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4538,13 +4571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: la patata
-    clip: {fileID: 8300000, guid: 13d6feac6fcbc4221a079a39d6371b6a, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
 --- !u!1 &1099353409
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,6 +6601,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514112200}
   m_Mesh: {fileID: -8983241790145626723, guid: 5d03b66e9d53b4d2893c7e89ede30fb8, type: 3}
+--- !u!1 &1518787443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518787445}
+  - component: {fileID: 1518787444}
+  m_Layer: 0
+  m_Name: Dialogue6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1518787444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518787443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453c0740d8c784d88835afc49b7bf621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 
+    clip: {fileID: 8300000, guid: 73416ae44165548c5b809a9bd61683ae, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  dialogueFinished: 0
+  playerSpeaking: 1
+  conversationLines:
+  - Digale que pare
+--- !u!4 &1518787445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518787443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 89.268036, y: -4.827816, z: 137.73355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531364289
 GameObject:
   m_ObjectHideFlags: 0
@@ -7975,7 +8055,6 @@ MonoBehaviour:
   checkpointPrefab: {fileID: 2822937831766762642, guid: c339ca409d6a64f2787512acad05f0b2,
     type: 3}
   door: {fileID: 2060825144}
-  audio_manager: {fileID: 515429968}
 --- !u!1001 &1888033813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8240,7 +8319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971285282
 GameObject:
@@ -8384,6 +8463,135 @@ Transform:
   - {fileID: 1582759662}
   m_Father: {fileID: 289042468}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1988645940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988645942}
+  - component: {fileID: 1988645941}
+  m_Layer: 0
+  m_Name: Dialogue3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1988645941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988645940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453c0740d8c784d88835afc49b7bf621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 
+    clip: {fileID: 8300000, guid: 91901302d8abf44398a350f06565c726, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  - name: 
+    clip: {fileID: 8300000, guid: dc1bd72ab2fff41ba924601b36e76ced, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  dialogueFinished: 0
+  playerSpeaking: 0
+  conversationLines:
+  - '"Tengo hambre"'
+  - '"Vaya a buscar la comida"'
+--- !u!4 &1988645942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988645940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 89.268036, y: -4.827816, z: 137.73355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2014066089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2014066091}
+  - component: {fileID: 2014066090}
+  m_Layer: 0
+  m_Name: Dialogue5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2014066090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014066089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453c0740d8c784d88835afc49b7bf621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 
+    clip: {fileID: 8300000, guid: 17560e47ae5594f8ba582790df1abe7b, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  - name: 
+    clip: {fileID: 8300000, guid: dcf12e19ab2134134b5121fa7a6972a0, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  - name: 
+    clip: {fileID: 8300000, guid: b93df6a6da48d4b1bac49bcf519acba9, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  dialogueFinished: 0
+  playerSpeaking: 1
+  conversationLines:
+  - Diga a Mazas que coma
+  - "\"Ll\xE9valo afuera\""
+  - Diga a Mazas que se levante y mueva
+--- !u!4 &2014066091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014066089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 89.268036, y: -4.827816, z: 137.73355}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060825144
 GameObject:
@@ -8662,13 +8870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: la manzana
-    clip: {fileID: 8300000, guid: 592b3ad8a85d64f8daf0b9234f0037a3, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
 --- !u!54 &2070667331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8860,13 +9061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pronunciation:
-    name: el pan
-    clip: {fileID: 8300000, guid: 08cffed2c8e2e4713a07c7e5e9cfa6ef, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
 --- !u!4 &2102015156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d5a81550f262490eb2a70dbbca9e3f8,
