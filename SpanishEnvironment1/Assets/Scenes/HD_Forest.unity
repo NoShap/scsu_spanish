@@ -488,6 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatable: 0
 --- !u!1 &112994988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatable: 0
 --- !u!65 &264688805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4117,6 +4119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatable: 0
 --- !u!64 &980111473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4318,6 +4321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatable: 0
 --- !u!1 &1029712364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatable: 0
 --- !u!1 &1099353409
 GameObject:
   m_ObjectHideFlags: 0
@@ -8057,7 +8062,7 @@ MonoBehaviour:
   checkpointPrefab: {fileID: 2822937831766762642, guid: c339ca409d6a64f2787512acad05f0b2,
     type: 3}
   door: {fileID: 2060825144}
-  audio_manager: {fileID: 0}
+  audio_manager: {fileID: 515429968}
 --- !u!1001 &1888033813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8873,6 +8878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatable: 0
 --- !u!54 &2070667331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9064,6 +9070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79f5dc7439994b26a9d8efe49096b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatable: 0
 --- !u!4 &2102015156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d5a81550f262490eb2a70dbbca9e3f8,
