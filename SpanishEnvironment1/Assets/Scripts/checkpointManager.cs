@@ -58,9 +58,12 @@ public class checkpointManager : MonoBehaviour
         // Stage 1
         if (currStage == stage.voiceOver1 && stageOpen)
         {
+
             stageOpen = false;
             //call coroutine to play audio file of voiceover
+            print("active");
             StartCoroutine(waitForAudioClip("VoiceOver1"));
+            print("finished");
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
@@ -80,8 +83,8 @@ public class checkpointManager : MonoBehaviour
 
             stageOpen = false;
             StartCoroutine(waitForAudioClip("VoiceOver2"));
-
         }
+
         // //Start interaction with Cook
         // if (currStage == 3f && stageOpen)
         // {
@@ -151,7 +154,6 @@ public class checkpointManager : MonoBehaviour
         door.GetComponent<Animator>().Play("door close", 0, 0f);
         door.GetComponent<AudioSource>().Play();
         yield break;
-
     }
 }
 
