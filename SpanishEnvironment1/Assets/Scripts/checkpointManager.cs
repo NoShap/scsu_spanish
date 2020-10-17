@@ -29,9 +29,9 @@ public class checkpointManager : MonoBehaviour
     public GameObject checkpointPrefab;
     private GameObject currCheckpoint;
     public GameObject door;
-    private AudioManager audio_manager;
-    private GameObject dialogueManager;
-    private DialogueManager dialogue1;
+    public AudioManager audio_manager;
+    private GameObject dialogueObject;
+    private DialogueManager dialogueManager;
     bool stageOpen = true;
 
 
@@ -39,10 +39,9 @@ public class checkpointManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audio_manager = FindObjectOfType<AudioManager>();
+        dialogueObject = GameObject.Find("DialogueManager");
+        dialogueManager = dialogueObject.GetComponent<DialogueManager>();
         currStage = stage.voiceOver1; //should eventually be set to fadeIn
-        // dialogueManager = GameObject.Find("Dialogue1");
-        // dialogue1 = dialogueManager.GetComponent<DialogueManager>();
     }
 
     // Update is called once per frame
@@ -59,15 +58,19 @@ public class checkpointManager : MonoBehaviour
         // Stage 1
         if (currStage == stage.voiceOver1 && stageOpen)
         {
+
             stageOpen = false;
             //call coroutine to play audio file of voiceover
+            print("active");
             StartCoroutine(waitForAudioClip("VoiceOver1"));
+            print("finished");
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
-            //dialogue1.curDialogue = 1;
-            //get something that increments curr stage 
-
+            print("Here");
+            dialogueManager.startDialogue(0);
+            //+ activate guard walking over
+            dialogueManager.startDialogue(1);
         }
         // Stage 2
         if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task
@@ -81,8 +84,8 @@ public class checkpointManager : MonoBehaviour
 
             stageOpen = false;
             StartCoroutine(waitForAudioClip("VoiceOver2"));
-
         }
+
         // //Start interaction with Cook
         // if (currStage == 3f && stageOpen)
         // {
@@ -152,7 +155,6 @@ public class checkpointManager : MonoBehaviour
         door.GetComponent<Animator>().Play("door close", 0, 0f);
         door.GetComponent<AudioSource>().Play();
         yield break;
-
     }
 }
 

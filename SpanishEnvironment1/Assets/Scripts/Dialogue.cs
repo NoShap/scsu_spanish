@@ -50,7 +50,7 @@ public class Dialogue : AudioManager
         yield return new WaitForSeconds(aud.length);
     }
 
-    IEnumerator playNextDialogue()
+    IEnumerator playNextLine()
     {
         isRunning = true;
         // print(dialogueCounter, dialogueCounter / 2, sounds.Length);
@@ -79,7 +79,7 @@ public class Dialogue : AudioManager
     {
         if (Input.GetKey("7"))
         {
-            if (!isRunning) StartCoroutine(playNextDialogue());
+            if (!isRunning) StartCoroutine(playNextLine());
         }
     }
 }

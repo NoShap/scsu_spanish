@@ -2482,8 +2482,8 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver1
-    clip: {fileID: 8300000, guid: f9d9e20fb36a84d35be18372d836f71c, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    volume: 0.93
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -2967,7 +2967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &566280056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3746,8 +3746,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - {fileID: 1933653475}
-  - {fileID: 566280055}
+  - {fileID: 1988645940}
+  - {fileID: 1029712364}
+  - {fileID: 2014066089}
+  - {fileID: 1518787443}
 --- !u!4 &854908108
 Transform:
   m_ObjectHideFlags: 0
@@ -3760,7 +3762,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877168696
 GameObject:
@@ -4375,7 +4377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1039236019
 PrefabInstance:
@@ -6653,7 +6655,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531364289
 GameObject:
@@ -8055,6 +8057,7 @@ MonoBehaviour:
   checkpointPrefab: {fileID: 2822937831766762642, guid: c339ca409d6a64f2787512acad05f0b2,
     type: 3}
   door: {fileID: 2060825144}
+  audio_manager: {fileID: 0}
 --- !u!1001 &1888033813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8255,7 +8258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1933653476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8494,13 +8497,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
+  - name: Hungry
     clip: {fileID: 8300000, guid: 91901302d8abf44398a350f06565c726, type: 3}
     volume: 0
     pitch: 0
     source: {fileID: 0}
     loop: 0
-  - name: 
+  - name: GetFood
     clip: {fileID: 8300000, guid: dc1bd72ab2fff41ba924601b36e76ced, type: 3}
     volume: 0
     pitch: 0
@@ -8523,7 +8526,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014066089
 GameObject:
@@ -8555,19 +8558,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
+  - name: Eat
     clip: {fileID: 8300000, guid: 17560e47ae5594f8ba582790df1abe7b, type: 3}
     volume: 0
     pitch: 0
     source: {fileID: 0}
     loop: 0
-  - name: 
+  - name: outside
     clip: {fileID: 8300000, guid: dcf12e19ab2134134b5121fa7a6972a0, type: 3}
     volume: 0
     pitch: 0
     source: {fileID: 0}
     loop: 0
-  - name: 
+  - name: getup
     clip: {fileID: 8300000, guid: b93df6a6da48d4b1bac49bcf519acba9, type: 3}
     volume: 0
     pitch: 0
@@ -8591,7 +8594,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060825144
 GameObject:

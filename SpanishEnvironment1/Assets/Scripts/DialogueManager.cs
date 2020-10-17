@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public GameObject[] dialogues;
-    private int currActiveDialogue = 0;
     private bool isRunning = false;
     private void Start()
     {
@@ -16,23 +15,35 @@ public class DialogueManager : MonoBehaviour
             d.SetActive(false);
         }
     }
-    IEnumerator playActiveDialogue()
+    public IEnumerator playActiveDialogue(int dialogueIndex)
     {
         isRunning = true;
-        print("staging: " + currActiveDialogue);
-        dialogues[currActiveDialogue].SetActive(true);
-        print("set active:" + currActiveDialogue);
-        while (!dialogues[currActiveDialogue].GetComponent<Dialogue>().dialogueFinished)
+        dialogues[dialogueIndex].SetActive(true);
+        while (!dialogues[dialogueIndex].GetComponent<Dialogue>().dialogueFinished)
         {
             yield return null;
         }
         print("Dialogue Completed, moving to next dialogue.");
+        dialogues[dialogueIndex].SetActive(false);
         isRunning = false;
+    }
+
+    public void startDialogue(int dialogueIndex)
+    {
+
+        if (!isRunning)
+        {
+            StartCoroutine(playActiveDialogue(dialogueIndex));
+        }
     }
 
     void Update()
     {
-        if (!isRunning) StartCoroutine(playActiveDialogue());
+        if (Input.GetKey("5"))
+        {
+            if (!isRunning) StartCoroutine(playActiveDialogue(0));
+        }
+
     }
 
 }
