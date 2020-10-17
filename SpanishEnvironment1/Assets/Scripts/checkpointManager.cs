@@ -67,6 +67,7 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
+            print("Here");
             dialogueManager.startDialogue(0);
             //+ activate guard walking over
             dialogueManager.startDialogue(1);
