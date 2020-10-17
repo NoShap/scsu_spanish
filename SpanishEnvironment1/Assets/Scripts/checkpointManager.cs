@@ -19,8 +19,7 @@ public class checkpointManager : MonoBehaviour
         dialogue3, //talk with Sanchez Mazas 
         event1, //watching prisoners be escorted out
         dialogue4, //tell Sanchez Mazas to get up and move outside
-        event2, // Sanchez Mazas runs away
-        dialogue5, // confront Sanchez Mazas
+        event2, // Sanchez Mazas runs away and player yells stop
         voiceOver4, //consequences
         fadeOut,
     }
@@ -29,6 +28,7 @@ public class checkpointManager : MonoBehaviour
     public GameObject checkpointPrefab;
     private GameObject currCheckpoint;
     public GameObject door;
+    private MazasController mazasController;
     public AudioManager audio_manager;
     private GameObject dialogueObject;
     private DialogueManager dialogueManager;
@@ -42,6 +42,7 @@ public class checkpointManager : MonoBehaviour
         dialogueObject = GameObject.Find("DialogueManager");
         dialogueManager = dialogueObject.GetComponent<DialogueManager>();
         currStage = stage.voiceOver1; //should eventually be set to fadeIn
+        mazasController = GameObject.Find("SanchezMazas").GetComponent<MazasController>();
     }
 
     // Update is called once per frame
@@ -135,6 +136,12 @@ public class checkpointManager : MonoBehaviour
         //         currStage = 8f;
         //     }
         // }
+
+        if (currStage == stage.event2)
+        {
+          mazasController.startRunning()
+          dialogueManager.startDialogue(3);
+        }
 
     }
 

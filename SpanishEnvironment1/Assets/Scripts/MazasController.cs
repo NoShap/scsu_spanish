@@ -107,6 +107,11 @@ public class MazasController : MonoBehaviour
 
     }
 
+    public void startRunning()
+    {
+      StartCoroutine(freakAndRun());
+    }
+
     private void nextDestination()
     {
       if (!doorOpened && up)
