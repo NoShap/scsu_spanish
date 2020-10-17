@@ -32,7 +32,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip GetClip(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
+        string n = name.ToLower();
+        print(n);
+        Sound s = Array.Find(sounds, sound => sound.name == n);
         return s.source.clip;
     }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Need to make sure a rigidbody is attached to language Observer target
+//
 public class SelectionManager : MonoBehaviour
 {
     private bool firstObjectHit = false;
@@ -40,19 +42,32 @@ public class SelectionManager : MonoBehaviour
                 objectSet = true;
                 firstObjectHit = true;
                 hitSuccess = true;
-                objRenderer = obj.GetComponent<Renderer>();
+                // dnot an animating person
+                if (!obj.GetComponent<LanguageObserverTarget>().animatable)
+                {
+                    objRenderer = obj.GetComponent<Renderer>();
+                }
+                else
+                {
+                    GameObject child = obj.transform.GetChild(0).gameObject;
+                    print(child.name);
+                    objRenderer = child.GetComponent<Renderer>();
+                }
+
                 oldMtl = objRenderer.material;
-                print("Material stored:, " + oldMtl.name);
                 objRenderer.material = highlightMaterial;
             }
 
-             //allow player to hear audio when 'x' key is pressed
-             //allow this any number of times as long as they're still looking at the object
-             if(Input.GetKeyDown("x") && notPlaying)
-             {
-                 StartCoroutine(PlayAudio(obj));
-             }
-
+            //allow player to hear audio when 'x' key is pressed
+            //allow this any number of times as long as they're still looking at the object
+            if (Input.GetKeyDown("x") && notPlaying)
+            {
+                StartCoroutine(PlayAudio(obj));
+                if (obj.GetComponent<LanguageObserverTarget>().animatable)
+                {
+                    obj.GetComponent<Animator>().Play(obj.name);
+                }
+            }
         }
 
         //When not hitting
@@ -62,7 +77,6 @@ public class SelectionManager : MonoBehaviour
             {
                 if (firstObjectHit)
                 {
-                    print("Material fetched:" + oldMtl.name);
                     objRenderer.material = oldMtl;
                 }
                 //destroy canvasses
@@ -76,11 +90,11 @@ public class SelectionManager : MonoBehaviour
     IEnumerator PlayAudio(GameObject obj)
     {
         notPlaying = false;
-        WordAudioManager.Play(obj.name);
-        AudioClip aud = WordAudioManager.GetClip(obj.name);
+        string name = obj.name.ToLower();
+        WordAudioManager.Play(name);
+        AudioClip aud = WordAudioManager.GetClip(name);
         yield return new WaitForSeconds(aud.length + 1f);
         notPlaying = true;
-        
     }
 
     void OnGUI()
@@ -89,7 +103,6 @@ public class SelectionManager : MonoBehaviour
         {
             if (!displayGUI) //if the GUI isn't already displaying
             {
-                //GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 200), hit.collider.gameObject.name + "Press X to hear Audio");
                 //create new Canvas
                 GameObject newCanvas = new GameObject("Canvas");
                 //set location of canvas
@@ -118,22 +131,6 @@ public class SelectionManager : MonoBehaviour
                 t.fontSize = 1;
                 t.alignment = TextAnchor.MiddleCenter;
                 t.color = Color.blue;
-
-                // //create Panel
-                // GameObject panel = new GameObject("Panel");
-                // panel.AddComponent<CanvasRenderer>();
-
-                // //Add style to panel
-                // Image i = panel.AddComponent<Image>();
-                // i.color = Color.white;
-
-                // //set Size of panel
-                // RectTransform rt = panel.GetComponent<RectTransform>();
-                // rt.sizeDelta = new Vector2(9,5);
-                // //rt.localScale = new Vector3((float)0.25, (float)0.25, (float)0.25);
-                // panel.transform.position = new Vector3(panel.transform.position.x - (float)0.1, panel.transform.position.y, panel.transform.position.z - (float)0.1);
-
-                // panel.transform.SetParent(newCanvas.transform, false);
 
 
                 //allow GUI to follow camera
