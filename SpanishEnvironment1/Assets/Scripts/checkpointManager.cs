@@ -29,7 +29,7 @@ public class checkpointManager : MonoBehaviour
     public GameObject checkpointPrefab;
     private GameObject currCheckpoint;
     public GameObject door;
-    public AudioManager audio_manager;
+    private AudioManager audio_manager;
     private GameObject dialogueManager;
     private DialogueManager dialogue1;
     bool stageOpen = true;
@@ -39,16 +39,17 @@ public class checkpointManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio_manager = FindObjectOfType<AudioManager>();
         currStage = stage.voiceOver1; //should eventually be set to fadeIn
-        dialogueManager = GameObject.Find("Dialogue1");
-        dialogue1 = dialogueManager.GetComponent<DialogueManager>();
+        // dialogueManager = GameObject.Find("Dialogue1");
+        // dialogue1 = dialogueManager.GetComponent<DialogueManager>();
     }
 
     // Update is called once per frame
     //State Machine controlling Player Progress throughout Tasks
     void Update()
     {
-        print("current stage: " + currStage);
+
         // Stage 0
         if (currStage == stage.fadeIn)
         {
@@ -64,7 +65,7 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
-            //play dialogue through
+            //dialogue1.curDialogue = 1;
             //get something that increments curr stage 
 
         }
@@ -138,9 +139,7 @@ public class checkpointManager : MonoBehaviour
     {
         audio_manager.Play(name);
         AudioClip aud = audio_manager.GetClip(name);
-        print("here");
         yield return new WaitForSeconds(aud.length + 1f);
-        print("finished");
         currStage++;
         stageOpen = true;
     }
