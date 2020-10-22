@@ -28,13 +28,13 @@ public class checkpointManager : MonoBehaviour
     private GameObject UI;
     private stage currStage = stage.fadeIn;
     public GameObject checkpointPrefab;
+    public GameObject Guard;
     private GameObject currCheckpoint;
     public GameObject door;
     public AudioManager audio_manager;
     private GameObject dialogueObject;
     private DialogueManager dialogueManager;
     bool stageOpen = true;
-
 
 
     // Start is called before the first frame update
@@ -60,18 +60,15 @@ public class checkpointManager : MonoBehaviour
         // Stage 1
         if (currStage == stage.voiceOver1 && stageOpen)
         {
-
             stageOpen = false;
             //call coroutine to play audio file of voiceover
-            print("active");
             StartCoroutine(waitForAudioClip("VoiceOver1"));
-            print("finished");
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
-            print("Here");
             dialogueManager.startDialogue(0);
-            //+ activate guard walking over
+            var guard_mover = Guard.GetComponent<DestinationMove>();
+            guard_mover.moveToDestination(guard_mover.origin);
             dialogueManager.startDialogue(1);
         }
         // Stage 2
@@ -87,10 +84,10 @@ public class checkpointManager : MonoBehaviour
             stageOpen = false;
             StartCoroutine(waitForAudioClip("VoiceOver2"));
         }
-        if(currStage == stage.task1 && stageOpen)
+        if (currStage == stage.task1 && stageOpen)
         {
             //if player has reached the checkpoint, destroy this instance of the checkpoint prefab and display new instructions
-             if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true) 
+            if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true)
             {
                 Destroy(currCheckpoint);
                 UI.GetComponent<Text>().text = "";
@@ -99,26 +96,26 @@ public class checkpointManager : MonoBehaviour
         }
 
         //VO: good work for completing the task. currently explains the languageobserver tool again
-        if(currStage == stage.voiceOver3 && stageOpen)
+        if (currStage == stage.voiceOver3 && stageOpen)
         {
             stageOpen = false;
             StartCoroutine(waitForAudioClip("VoiceOver3"));
         }
-        if(currStage == stage.dialogue2 && stageOpen)
+        if (currStage == stage.dialogue2 && stageOpen)
         {
             dialogueManager.startDialogue(2);
         }
         //having acquired the tray, go deliver it to sanchez mazas
-        if(currStage == stage.task2 && stageOpen)
+        if (currStage == stage.task2 && stageOpen)
         {
-           UI.GetComponent<Text>().text = "\n Deliver the tray to Sanchez Mazas' prison cell.";
+            UI.GetComponent<Text>().text = "\n Deliver the tray to Sanchez Mazas' prison cell.";
             //instantiate a checkpoint by Sanchez Mazas' Cell
             Quaternion rot = Quaternion.Euler(-1f, -28f, 0f);
             currCheckpoint = Instantiate(checkpointPrefab, new Vector3(134f, 5f, 110f), rot);
             currCheckpoint.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             currStage += 1;
         }
-        if(currStage == stage.dialogue3)
+        if (currStage == stage.dialogue3)
         {
             if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true)
             {

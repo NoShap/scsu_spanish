@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
     {
         string n = name.ToLower();
         print(n);
-        Sound s = Array.Find(sounds, sound => sound.name == n);
+        Sound s = Array.Find(sounds, sound => sound.name.ToLower() == n);
         return s.source.clip;
     }
 
