@@ -13,7 +13,6 @@ public class DestinationMove : MonoBehaviour
     Transform nextTransform;
     private bool switched = true;
     public Transform origin;
-    public GameObject og;
     public Transform target;
     // Start is called before the first frame update
     void Start()
@@ -64,7 +63,7 @@ public class DestinationMove : MonoBehaviour
             }
             isMoving = true;
         }
-
+        anim.SetBool("Moving", isMoving);
     }
 
 

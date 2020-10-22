@@ -11,10 +11,11 @@ public class checkpointManager : MonoBehaviour
         fadeIn, // screen goes from black to full brightness
         voiceOver1, //historical intro
         dialogue1, //talk with Sanchez Mazas
+        dialogue2, // guard talking to you
         voiceOver2, //explaining checkpoints and tasks
         task1, // get food for Sanchez Mazas 
         voiceOver3, //explaining languageObserver
-        dialogue2, //dialogue with food delivery guard
+                    //dialogue with food delivery guard
         task2, // pick up food and receive directive to return to SM
         dialogue3, //talk with Sanchez Mazas 
         event1, //watching prisoners be escorted out
@@ -26,7 +27,7 @@ public class checkpointManager : MonoBehaviour
     }
 
     private GameObject UI;
-    private stage currStage = stage.fadeIn;
+    public stage currStage = stage.fadeIn;
     public GameObject checkpointPrefab;
     public GameObject Guard;
     private GameObject currCheckpoint;
@@ -34,7 +35,7 @@ public class checkpointManager : MonoBehaviour
     public AudioManager audio_manager;
     private GameObject dialogueObject;
     private DialogueManager dialogueManager;
-    bool stageOpen = true;
+    public bool stageOpen = true;
 
 
     // Start is called before the first frame update
@@ -66,9 +67,15 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
+            stageOpen = false;
             dialogueManager.startDialogue(0);
+        }
+        if (currStage == stage.dialogue2 && stageOpen)
+        {
+            print("next Round");
+            stageOpen = false;
             var guard_mover = Guard.GetComponent<DestinationMove>();
-            guard_mover.moveToDestination(guard_mover.origin);
+            guard_mover.moveToDestination(guard_mover.target);
             dialogueManager.startDialogue(1);
         }
         // Stage 2
@@ -101,7 +108,7 @@ public class checkpointManager : MonoBehaviour
             stageOpen = false;
             StartCoroutine(waitForAudioClip("VoiceOver3"));
         }
-        if (currStage == stage.dialogue2 && stageOpen)
+        if (currStage == stage.dialogue3 && stageOpen)
         {
             dialogueManager.startDialogue(2);
         }
@@ -115,7 +122,7 @@ public class checkpointManager : MonoBehaviour
             currCheckpoint.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             currStage += 1;
         }
-        if (currStage == stage.dialogue3)
+        if (currStage == stage.dialogue4)
         {
             if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true)
             {
@@ -125,6 +132,12 @@ public class checkpointManager : MonoBehaviour
                 currStage += 1;
             }
         }
+
+        //if (currStage == stage.event1)
+        {
+            //event1 watching prisoners be escorted out
+        }
+
     }
 
     IEnumerator waitForAudioClip(string name)
