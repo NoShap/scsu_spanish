@@ -15,9 +15,9 @@ public class checkpointManager : MonoBehaviour
         voiceOver2, //explaining checkpoints and tasks
         task1, // get food for Sanchez Mazas 
         voiceOver3, //explaining languageObserver
-                    //dialogue with food delivery guard
+        //dialogue with food delivery guard
+        dialogue3, //talk with Food Stand Man 
         task2, // pick up food and receive directive to return to SM
-        dialogue3, //talk with Sanchez Mazas 
         event1, //watching prisoners be escorted out
         dialogue4, //tell Sanchez Mazas to get up and move outside
         event2, // Sanchez Mazas runs away
@@ -72,7 +72,6 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.dialogue2 && stageOpen)
         {
-            print("next Round");
             stageOpen = false;
             var guard_mover = Guard.GetComponent<DestinationMove>();
             guard_mover.moveToDestination(guard_mover.target);
@@ -81,6 +80,7 @@ public class checkpointManager : MonoBehaviour
         // Stage 2
         if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task
         {
+            stageOpen = false;
             //display text
             UI.GetComponent<Text>().text = "\n Proceed to the Food Pickup Area outside the prison.";
             //instantiate a checkpoint prefab at position and rotation rot. then transform it to the appropriate size.
@@ -88,7 +88,6 @@ public class checkpointManager : MonoBehaviour
             currCheckpoint = Instantiate(checkpointPrefab, new Vector3(119.81f, 5.1622f, 148.78f), rot);
             currCheckpoint.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
-            stageOpen = false;
             StartCoroutine(waitForAudioClip("VoiceOver2"));
         }
         if (currStage == stage.task1 && stageOpen)
@@ -110,20 +109,30 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.dialogue3 && stageOpen)
         {
+            stageOpen = false;
+            print("Talk with food stand ");
             dialogueManager.startDialogue(2);
         }
         //having acquired the tray, go deliver it to sanchez mazas
         if (currStage == stage.task2 && stageOpen)
         {
+            // stageOpen = false;
             UI.GetComponent<Text>().text = "\n Deliver the tray to Sanchez Mazas' prison cell.";
             //instantiate a checkpoint by Sanchez Mazas' Cell
             Quaternion rot = Quaternion.Euler(-1f, -28f, 0f);
             currCheckpoint = Instantiate(checkpointPrefab, new Vector3(134f, 5f, 110f), rot);
             currCheckpoint.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            currStage += 1;
+            if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true)
+            {
+                Destroy(currCheckpoint);
+                UI.GetComponent<Text>().text = "";
+                currStage += 1;
+                // stageOpen = true;
+            }
         }
         if (currStage == stage.dialogue4)
         {
+            stageOpen = false;
             if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true)
             {
                 //insert dialogue

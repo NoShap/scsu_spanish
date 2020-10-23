@@ -2508,25 +2508,25 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver1
-    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    clip: {fileID: 8300000, guid: 21b4de2c796a74a65ab884ee022e0e77, type: 3}
     volume: 0.93
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver2
-    clip: {fileID: 8300000, guid: b92d8fc792d404868a24693f9f32b060, type: 3}
+    clip: {fileID: 8300000, guid: 417c297c7d1db4b41811b17896a753a2, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver3
-    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    clip: {fileID: 8300000, guid: 8ba53336347f142819c670fe5e428238, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver4
-    clip: {fileID: 8300000, guid: 0f4e8affc3a7646a9900987d91aef2db, type: 3}
+    clip: {fileID: 8300000, guid: 17a8414feb9b548b99d74cc56d6e1069, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -3694,6 +3694,7 @@ MonoBehaviour:
   - {fileID: 1029712364}
   - {fileID: 2014066089}
   - {fileID: 1518787443}
+  checkpointManage: {fileID: 0}
 --- !u!4 &854908108
 Transform:
   m_ObjectHideFlags: 0
@@ -6383,8 +6384,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508640319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.67, y: 5.45, z: 1.56}
-  m_LocalScale: {x: -0.03170422, y: -0.03170422, z: -0.03170422}
+  m_LocalPosition: {x: 2.22, y: 5.02, z: 1.28}
+  m_LocalScale: {x: -0.11348609, y: -0.11348609, z: -0.11348609}
   m_Children: []
   m_Father: {fileID: 1631359706}
   m_RootOrder: 2
@@ -8206,11 +8207,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b445c8ab0054901b82cfd76aec0a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currStage: 0
   checkpointPrefab: {fileID: 2822937831766762642, guid: c339ca409d6a64f2787512acad05f0b2,
     type: 3}
   Guard: {fileID: 2784360834032194694}
   door: {fileID: 2060825144}
   audio_manager: {fileID: 515429968}
+  stageOpen: 1
 --- !u!1001 &1888033813
 PrefabInstance:
   m_ObjectHideFlags: 0
