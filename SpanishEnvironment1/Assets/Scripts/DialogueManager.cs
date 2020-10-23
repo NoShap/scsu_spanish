@@ -8,8 +8,10 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject[] dialogues;
     private bool isRunning = false;
+    public checkpointManager checkpointManage;
     private void Start()
     {
+        checkpointManage = GameObject.Find("UI").GetComponent<checkpointManager>();
         foreach (GameObject d in dialogues)
         {
             d.SetActive(false);
@@ -23,14 +25,15 @@ public class DialogueManager : MonoBehaviour
         {
             yield return null;
         }
-        print("Dialogue Completed, moving to next dialogue.");
         dialogues[dialogueIndex].SetActive(false);
+        checkpointManage.stageOpen = true;
+        checkpointManage.currStage += 1;
         isRunning = false;
+        yield return null;
     }
 
     public void startDialogue(int dialogueIndex)
     {
-
         if (!isRunning)
         {
             StartCoroutine(playActiveDialogue(dialogueIndex));

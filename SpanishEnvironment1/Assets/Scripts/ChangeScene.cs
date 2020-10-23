@@ -11,7 +11,10 @@ public class ChangeScene : MonoBehaviour
     {
         //cp = GetComponent<ChangeScene>();
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        SceneManager.LoadScene("HD_Forest");
+    }
     // Update is called once per frame
     void Update()
     {

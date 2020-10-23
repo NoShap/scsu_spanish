@@ -32,7 +32,7 @@ public class Dialogue : AudioManager
     IEnumerator waitForPlayer()
     {
         UI.text = "\n " + conversationLines[dialogueCounter];
-        while (!Input.GetKeyDown(KeyCode.Space))
+        while (!Input.GetKeyDown(KeyCode.Alpha7))
         {
             //representative of the player speaking into the mic
             yield return null;
@@ -56,9 +56,7 @@ public class Dialogue : AudioManager
         // print(dialogueCounter, dialogueCounter / 2, sounds.Length);
         if (dialogueCounter >= sounds.Length)
         {
-            Debug.Log("Dialogue Sequence Finished");
             dialogueFinished = true;
-            Debug.Log("Dialogue Sequence Finished");
             yield return null;
         }
         else if (playerSpeaking)
