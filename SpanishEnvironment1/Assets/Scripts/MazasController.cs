@@ -142,6 +142,5 @@ public class MazasController : MonoBehaviour
         anim.SetBool("Running", true);
         yield return new WaitForSeconds(3f);
         shotsFired = true;
-    }
-​
+    }​
 }
