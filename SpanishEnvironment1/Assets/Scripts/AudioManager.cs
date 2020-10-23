@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
     public Sound[] sounds;
     // Start is called before the first frame update
     void Awake()
@@ -34,7 +35,7 @@ public class AudioManager : MonoBehaviour
     {
         string n = name.ToLower();
         print(n);
-        Sound s = Array.Find(sounds, sound => sound.name == n);
+        Sound s = Array.Find(sounds, sound => sound.name.ToLower() == n);
         return s.source.clip;
     }
 

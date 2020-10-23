@@ -8,9 +8,12 @@ public class DestinationMove : MonoBehaviour
     private Animator anim;
     private NavMeshAgent nav;
     private bool isMoving;
-
+    AnimatorClipInfo[] m_CurrentClipInfo;
     public List<Transform> destinations;
     Transform nextTransform;
+    private bool switched = true;
+    public Transform origin;
+    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,22 +21,19 @@ public class DestinationMove : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         nav.destination = destinations[0].position;
         destinations.RemoveAt(0);
-
+        nav.stoppingDistance = 4f;
+        nav.speed = 0.1f;
         // nextTransform = destinations[0];
     }
 
-    // IEnumerator playAnim()
-    // {
-    //     print("coroutine Started");
-    //     yield return new WaitForSeconds(5f);
-    //     print("coroutine continuing");
+    public void moveToDestination(Transform destination)
+    {
+        destinations.Add(destination);
+    }
 
-    // }
-
-    // Update is called once per frame
     void Update()
     {
-
+        //if reached destination 
         if (nav.remainingDistance <= nav.stoppingDistance)
         {
             if (destinations.Count != 0)
@@ -43,19 +43,27 @@ public class DestinationMove : MonoBehaviour
             }
             else
             {
+                if (!switched)
+                {
+                    m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
+                    anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
+                    switched = true;
+                }
                 isMoving = false;
             }
-
         }
+        // walking towards destination
         else
         {
+            if (switched)
+            {
+                m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
+                anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
+                switched = false;
+            }
             isMoving = true;
         }
-        if (Input.GetKey("x"))
-        {
-            print("X Hit");
-            anim.SetBool("Moving", isMoving);
-        }
+        anim.SetBool("Moving", isMoving);
     }
 
 
