@@ -76,7 +76,17 @@ public class checkpointManager : MonoBehaviour
             stageOpen = false;
             var guard_mover = Guard.GetComponent<DestinationMove>();
             guard_mover.moveToDestination(guard_mover.target);
-            dialogueManager.startDialogue(1);
+            //guard turns to player
+            if(!guard_mover.isMoving)
+            {
+                //GuardContainer.AddComponent<RotateTowards>();
+                // GuardContainer.GetComponent<RotateTowards>().turnToCamera(Camera.main, GuardContainer);
+                // OR
+                // Guard.AddComponent<followCamera>();
+                // Guard.GetComponent<followCamera>().m_Camera = Camera.main;
+                dialogueManager.startDialogue(1);
+            }
+           
         }
         // Stage 2
         if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task
@@ -150,7 +160,7 @@ public class checkpointManager : MonoBehaviour
 
         if (currStage == stage.event2)
         {
-          mazasController.startRunning()
+          mazasController.startRunning();
           dialogueManager.startDialogue(3);
         }
 
@@ -174,5 +184,13 @@ public class checkpointManager : MonoBehaviour
         door.GetComponent<AudioSource>().Play();
         yield break;
     }
+
+    // IEnumerator RotateTowards(Camera target, GameObject turningObj)
+    // {
+    //     float targetRotationY = target.transform.eulerAngles.y;
+    //     turningObj.transform.Rotate (100,(targetRotationY + 180) % 180,0);
+    //     yield break;
+
+    // }
 }
 

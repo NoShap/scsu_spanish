@@ -7,7 +7,7 @@ public class DestinationMove : MonoBehaviour
 {
     private Animator anim;
     private NavMeshAgent nav;
-    private bool isMoving;
+    public bool isMoving;
     AnimatorClipInfo[] m_CurrentClipInfo;
     public List<Transform> destinations;
     Transform nextTransform;
