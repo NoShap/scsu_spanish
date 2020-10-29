@@ -4295,13 +4295,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Take the Tray
+  - name: TakeTray
     clip: {fileID: 8300000, guid: 04594f385d6134608a0c742fe1eb38db, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: Say Thank You
+  - name: SayThanks
     clip: {fileID: 8300000, guid: c4ba225659c294b3dbb5c99770f90a1e, type: 3}
     volume: 1
     pitch: 1
@@ -6658,7 +6658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: x
+  - name: SayStop
     clip: {fileID: 8300000, guid: 73416ae44165548c5b809a9bd61683ae, type: 3}
     volume: 1
     pitch: 1
@@ -8638,13 +8638,13 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: outside
+  - name: TakeOutside
     clip: {fileID: 8300000, guid: dcf12e19ab2134134b5121fa7a6972a0, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: getup
+  - name: Getup
     clip: {fileID: 8300000, guid: b93df6a6da48d4b1bac49bcf519acba9, type: 3}
     volume: 0
     pitch: 0
