@@ -38,8 +38,31 @@ public class MazasController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         // progress
+        navigateAway();
+        // move Sanchez Mazas
+        if (Input.GetKey("m"))
+        {
+            nextDestination();
+        }
+        if (Input.GetKeyDown("g"))
+        {
+            getUp();
+        }
+        if (Input.GetKey("t"))
+        {
+            audioManager.Play("Tree");
+        }
+        if (Input.GetKey("c"))
+        {
+            destinations.RemoveAt(0);
+            anim.SetBool("Running", true);
+            nav.destination = destinations[0].position;
+        }
+    }
+
+    private void navigateAway()
+    {
         if (nav.remainingDistance <= nav.stoppingDistance)
         {
             if (anim.GetBool("Walking"))
@@ -61,50 +84,26 @@ public class MazasController : MonoBehaviour
             }
             if (anim.GetBool("Running") && shotsFired)
             {
-                anim.SetBool("Running", false);
-                anim.Play("Terrified");
-                uI.text = "\n Pregúntele a donde va con la frase siquIenta: \n ¿A donde va usted?";
-                audioManager.Play("DondeVa");
+                confrontMazas();
             }
 
         }
-        // move Sanchez Mazas
-        if (Input.GetKey("m"))
-        {
-            nextDestination();
-        }
+    }
 
-        if (Input.GetKeyDown("g"))
-        {
-            up = true;
-            anim.SetBool("Sitting", false);
-            audioManager.Play("Get");
-            uI.text = "\n Pulse la tecla 'b' para comenzar una conversacion";
-        }
-        if (Input.GetKey("t"))
-        {
-            audioManager.Play("Tree");
-        }
-        if (Input.GetKey("c"))
-        {
-            destinations.RemoveAt(0);
-            anim.SetBool("Running", true);
-            nav.destination = destinations[0].position;
-            print("Hello");
+    public void getUp()
+    {
+        up = true;
+        anim.SetBool("Sitting", false);
+        audioManager.Play("Get");
+        uI.text = "\n Pulse la tecla 'b' para comenzar una conversacion";
+    }
 
-        }
-        if (Input.GetKeyDown("k"))
-        {
-            StartCoroutine(freakAndRun());
-        }
-        if (Input.GetKeyDown("r"))
-        {
-            anim.SetBool("Running", true);
-            nav.speed = 5f;
-            nav.destination = finalDest.position;
-        }
-
-
+    public void confrontMazas()
+    {
+        anim.SetBool("Running", false);
+        anim.Play("Terrified");
+        uI.text = "\n Pregúntele a donde va con la frase siguiente: \n ¿A donde va usted?";
+        audioManager.Play("DondeVa");
     }
 
     public void startRunning()
@@ -112,7 +111,7 @@ public class MazasController : MonoBehaviour
         StartCoroutine(freakAndRun());
     }
 
-    private void nextDestination()
+    public void nextDestination()
     {
         if (!doorOpened && up)
         {
@@ -120,9 +119,8 @@ public class MazasController : MonoBehaviour
             door.GetComponent<Animator>().Play("door open", 0, 0f);
             door.GetComponent<AudioSource>().Play();
             //nav.destination = destinations[0].position;
-
-
         }
+
         anim.SetBool("Walking", true);
         nav.destination = destinations[0].position;
         audioManager.Play("Move");

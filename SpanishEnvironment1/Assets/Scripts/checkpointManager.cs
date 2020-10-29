@@ -22,7 +22,8 @@ public class checkpointManager : MonoBehaviour
         event1, //watching prisoners be escorted out
         dialogue5, //Guard Tells you to get the prisoner
         dialogue6, // tell SM to get up and go outside (and move him outside)
-        event2, // Sanchez Mazas runs away and player yells stop
+        event2, // SM goes outside
+        event3, // Sanchez Mazas runs away and player yells stop
         dialogue7, // Tell Sanchez Mazas to stop
         voiceOver4, //consequences
         fadeOut,
@@ -120,46 +121,89 @@ public class checkpointManager : MonoBehaviour
         //     print("Talk with food stand ");
         //     dialogueManager.startDialogue(2);
         // }
-        //having acquired the tray, go deliver it to sanchez mazas
+        // having acquired the tray, go deliver it to sanchez mazas
         if (currStage == stage.task2 && stageOpen)
         {
-            stageOpen = false;
+            //stageOpen = false;
             UI.GetComponent<Text>().text = "\n Deliver the tray to Sanchez Mazas' prison cell.";
             //instantiate a checkpoint by Sanchez Mazas' Cell
             Quaternion rot = Quaternion.Euler(-1f, -28f, 0f);
             currCheckpoint = Instantiate(checkpointPrefab, new Vector3(134f, 5f, 110f), rot);
             currCheckpoint.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             currStage += 1;
+
         }
 
-        if (currStage == stage.dialogue4)
+        if (currStage == stage.dialogue4 && stageOpen)
         {
             if (currCheckpoint.GetComponent<CheckpointTrigger>().hasReached == true)
             {
+                stageOpen = false;
                 StartCoroutine("GiveFood");
                 dialogueManager.startDialogue(3);
                 //UI.GetComponent<Text>().text = "\n Task Complete. You may now Explore the Map.";
             }
-        }
-        if (currStage == stage.dialogue5 && stageOpen)
-        {
-            stageOpen = false;
-            dialogueManager.startDialogue(4);
         }
         // event1 watching prisoners be escorted out
         if (currStage == stage.event1 && stageOpen)
         {
             stageOpen = false;
             prisoners.GetComponent<MoveOut>().moveOutChildren(prisoners.transform);
+            currStage += 1;
+            stageOpen = true;
         }
-
-        if (currStage == stage.event2)
+        //Guard Tells you to get the prisoner
+        if (currStage == stage.dialogue5 && stageOpen)
         {
-            mazasController.startRunning();
-            dialogueManager.startDialogue(5);
+            stageOpen = false;
+            dialogueManager.startDialogue(4);
         }
-        print(currStage);
+        // tell Sanchez Mazas to get up
+        if (currStage == stage.dialogue6 && stageOpen)
+        {
+            stageOpen = false;
+            dialogueManager.startDialogue(5);
+            mazasController.getUp();
+        }
+        // Sanchez Mazas goes outside
+        if (currStage == stage.event2 && stageOpen)
+        {
+            stageOpen = false;
+            mazasController.nextDestination();
+            waitForTime(10f);
+        }
 
+        // Sanchez Mazas runs away
+        if (currStage == stage.event3 && stageOpen)
+        {
+            stageOpen = false;
+            mazasController.startRunning();
+            dialogueManager.startDialogue(6);
+            //start event 2
+        }
+        //tell Sanchez Mazas to stop
+        if (currStage == stage.dialogue7 && stageOpen)
+        {
+            stageOpen = false;
+            dialogueManager.startDialogue(6);
+        }
+        if (currStage == stage.voiceOver4 && stageOpen)
+        {
+            StartCoroutine(waitForAudioClip("VoiceOver4"));
+        }
+        if (currStage == stage.fadeOut)
+        {
+            //fadeOut scene into conclusion scene
+        }
+
+        print(currStage);
+    }
+
+    IEnumerator waitForTime(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        currStage += 1;
+        stageOpen = true;
     }
 
     IEnumerator waitForAudioClip(string name)
