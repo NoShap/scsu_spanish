@@ -15,8 +15,7 @@ Prison Escape Scene Steps/Order
 8) EVENT 1 watch guards escort other prisoners outside
 8.5) DIALOGUE 5: Guard tells you to get the prisoner
 9) (take him outside) DIALOGUE 6 Tell SM to get out of his cell and move him outside
-
-10) While other prisoners are moving away, SM runs
+10) EVENT 2 While other prisoners are moving away, SM runs
 11) DIALOGUE 7 Confront SM 
 11.5) (VOICE OVER 4) consequences of actions
 

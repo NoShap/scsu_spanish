@@ -113,6 +113,7 @@ public class MazasController : MonoBehaviour
 
     public void nextDestination()
     {
+        
         if (!doorOpened && up)
         {
             doorOpened = true;
