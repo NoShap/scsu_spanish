@@ -150,7 +150,7 @@ public class checkpointManager : MonoBehaviour
 
         if (currStage == stage.event2)
         {
-          mazasController.startRunning()
+          mazasController.startRunning();
           dialogueManager.startDialogue(3);
         }
 
