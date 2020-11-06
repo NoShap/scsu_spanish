@@ -29,6 +29,17 @@ public class PrisonerController : MonoBehaviour
         anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
         startMoving = true;
     }
+    public void moveOut()
+    {
+        m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
+        anim.Play(m_CurrentClipInfo[0].clip.name, 0, 0.95f);
+        if (mobile)
+        {
+            door.GetComponent<Animator>().Play("door open", 0, 0f);
+            door.GetComponent<AudioSource>().Play();
+            StartCoroutine(LineUp());
+        }
+    }
 
     void Update()
     {

@@ -959,8 +959,10 @@ Transform:
   m_Children:
   - {fileID: 365996985}
   - {fileID: 1988645942}
+  - {fileID: 1791578072}
   - {fileID: 1029712366}
   - {fileID: 2014066091}
+  - {fileID: 197913533}
   - {fileID: 1518787445}
   - {fileID: 854908108}
   m_Father: {fileID: 0}
@@ -1527,6 +1529,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184811255}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &197913532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197913533}
+  - component: {fileID: 197913534}
+  m_Layer: 0
+  m_Name: Dialogue5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197913533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197913532}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.651985, y: -6.655587, z: 28.378677}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 121130856}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &197913534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197913532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453c0740d8c784d88835afc49b7bf621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: TakeOutside
+    clip: {fileID: 8300000, guid: dcf12e19ab2134134b5121fa7a6972a0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Getup
+    clip: {fileID: 8300000, guid: b93df6a6da48d4b1bac49bcf519acba9, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  dialogueFinished: 0
+  playerSpeaking: 1
+  conversationLines:
+  - "\"Ll\xE9valo afuera\""
+  - Diga a Mazas que se levante y mueva
 --- !u!1 &262729986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,31 +2714,31 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver1
-    clip: {fileID: 8300000, guid: 21b4de2c796a74a65ab884ee022e0e77, type: 3}
+    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
     volume: 0.93
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver2
-    clip: {fileID: 8300000, guid: 417c297c7d1db4b41811b17896a753a2, type: 3}
+    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver3
-    clip: {fileID: 8300000, guid: 8ba53336347f142819c670fe5e428238, type: 3}
+    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver4
-    clip: {fileID: 8300000, guid: 17a8414feb9b548b99d74cc56d6e1069, type: 3}
+    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver5
-    clip: {fileID: 8300000, guid: 3c56e8ee6bef2452eb4c0faaae2daa99, type: 3}
+    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -3834,8 +3897,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 1988645940}
+  - {fileID: 1791578071}
   - {fileID: 1029712364}
   - {fileID: 2014066089}
+  - {fileID: 197913532}
   - {fileID: 1518787443}
   checkpointManage: {fileID: 0}
 --- !u!4 &854908108
@@ -3850,7 +3915,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 121130856}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877168696
 GameObject:
@@ -4419,7 +4484,7 @@ GameObject:
   - component: {fileID: 1029712366}
   - component: {fileID: 1029712365}
   m_Layer: 0
-  m_Name: Dialogue2
+  m_Name: Dialogue3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4467,7 +4532,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 121130856}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1039236019
 PrefabInstance:
@@ -6782,7 +6847,7 @@ GameObject:
   - component: {fileID: 1518787445}
   - component: {fileID: 1518787444}
   m_Layer: 0
-  m_Name: Dialogue4
+  m_Name: Dialogue6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6823,7 +6888,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 121130856}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531364289
 GameObject:
@@ -8180,6 +8245,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1781387915}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1791578071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791578072}
+  - component: {fileID: 1791578073}
+  m_Layer: 0
+  m_Name: Dialogue2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1791578072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791578071}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.651985, y: -6.655587, z: 28.378677}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 121130856}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791578073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791578071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453c0740d8c784d88835afc49b7bf621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: GetFood
+    clip: {fileID: 8300000, guid: dc1bd72ab2fff41ba924601b36e76ced, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  dialogueFinished: 0
+  playerSpeaking: 0
+  conversationLines:
+  - '"Vaya a buscar la comida"'
 --- !u!1 &1883241802
 GameObject:
   m_ObjectHideFlags: 0
@@ -8756,7 +8875,7 @@ GameObject:
   - component: {fileID: 2014066091}
   - component: {fileID: 2014066090}
   m_Layer: 0
-  m_Name: Dialogue3
+  m_Name: Dialogue4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8781,24 +8900,10 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: TakeOutside
-    clip: {fileID: 8300000, guid: dcf12e19ab2134134b5121fa7a6972a0, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Getup
-    clip: {fileID: 8300000, guid: b93df6a6da48d4b1bac49bcf519acba9, type: 3}
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-    loop: 0
   dialogueFinished: 0
   playerSpeaking: 1
   conversationLines:
   - Diga a Mazas que coma
-  - "\"Ll\xE9valo afuera\""
-  - Diga a Mazas que se levante y mueva
 --- !u!4 &2014066091
 Transform:
   m_ObjectHideFlags: 0
@@ -8811,7 +8916,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 121130856}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060825144
 GameObject:
@@ -89358,6 +89463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7812341341416933172}
+  - component: {fileID: 5876070314628884977}
   m_Layer: 0
   m_Name: Prisoners
   m_TagString: Untagged
@@ -89365,6 +89471,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5876070314628884977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5876070314628884976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ca1aea1b7e4435fa87973be3d335c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5878167796962738434
 Transform:
   m_ObjectHideFlags: 0

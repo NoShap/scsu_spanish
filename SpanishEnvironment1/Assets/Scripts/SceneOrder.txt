@@ -4,18 +4,19 @@ Prison Escape Scene Steps/Order
 0) Pre-scene tutorial
 1) --- FADE IN ---- 
 2) VOICE OVER 1 contextualizing historical circumstances and place in Scene
-2.5) Dialogue 1 talk with Sanchez Mazas (Sanchez Mazas says I'm hungry, Guard says get the food)
+2.5) Dialogue 1 talk with Sanchez Mazas (Sanchez Mazas says I'm hungry, )
+2.75) DIALOGUE 2 Guard says get the food
 3) Written directive and VOICE OVER 2 to explain checkpoints and to bring food to Sanchez Mazas (SM) the prisoner
-4)  Go outside to get the food, reach the checkpoint 
+4)  TASK 1 Go outside to get the food, reach the checkpoint 
 4.5) VOICE OVER 3 explaining LanguageObserver
-5) (take the tray) (thank you)Dialogue2 Talk with the food delivery guard
-6) pick up food and receive directive to return to SM
-7) Dialogue 3 Talk with SM (Instruction to tell sanchez mazas to eat the food)
-8) watch guards escort other prisoners outside
-9) (take him outside) Dialogue 4 Tell SM to get out of his cell and move him outside
-
-10) While other prisoners are moving away, SM runs
-11) Dialogue 5 Confront SM 
+5) DIALOGUE 3 Talk with the food delivery guard
+6) TASK 2 pick up food and receive directive to return to SM
+7) DIALOGUE 4 Talk with SM (Instruction to tell sanchez mazas to eat the food)
+8) EVENT 1 watch guards escort other prisoners outside
+8.5) DIALOGUE 5: Guard tells you to get the prisoner
+9) (take him outside) DIALOGUE 6 Tell SM to get out of his cell and move him outside
+10) EVENT 2 While other prisoners are moving away, SM runs
+11) DIALOGUE 7 Confront SM 
 11.5) (VOICE OVER 4) consequences of actions
 
 
