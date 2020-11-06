@@ -193,6 +193,8 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.fadeOut)
         {
+          mazasController.startRunning();
+          dialogueManager.startDialogue(3);
             //fadeOut scene into conclusion scene
         }
 
