@@ -569,6 +569,7 @@ MonoBehaviour:
   highlightMaterial: {fileID: 2100000, guid: 53da4e54a529242adba04c4078789694, type: 2}
   customFont: {fileID: 12800000, guid: 18401fcc371b240daa08b5b261f3da1d, type: 3}
   WordAudioManager: {fileID: 1557308835}
+  laser: {fileID: 0}
 --- !u!1 &934910006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1549,7 @@ MonoBehaviour:
   highlightMaterial: {fileID: 2100000, guid: 425050b3dd3784ceabfdcc2caa49b81f, type: 2}
   customFont: {fileID: 12800000, guid: 18401fcc371b240daa08b5b261f3da1d, type: 3}
   WordAudioManager: {fileID: 1557308835}
+  laser: {fileID: 0}
 --- !u!4 &543450653112150418
 Transform:
   m_ObjectHideFlags: 0
