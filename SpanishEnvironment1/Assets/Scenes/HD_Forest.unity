@@ -2716,25 +2716,25 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver1
-    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    clip: {fileID: 8300000, guid: 21b4de2c796a74a65ab884ee022e0e77, type: 3}
     volume: 0.93
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver2
-    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    clip: {fileID: 8300000, guid: 417c297c7d1db4b41811b17896a753a2, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver3
-    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    clip: {fileID: 8300000, guid: 8ba53336347f142819c670fe5e428238, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: VoiceOver4
-    clip: {fileID: 8300000, guid: 15f7f861c9b5f4cd1aba49c8b24ccb94, type: 3}
+    clip: {fileID: 8300000, guid: 17a8414feb9b548b99d74cc56d6e1069, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
