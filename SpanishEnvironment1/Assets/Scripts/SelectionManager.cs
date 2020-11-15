@@ -19,6 +19,7 @@ public class SelectionManager : MonoBehaviour
     public Font customFont;
     private bool notPlaying = true; //checks if an audio file is currently playing
     public AudioManager WordAudioManager;
+    [SerializeField] GameObject laser;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +32,12 @@ public class SelectionManager : MonoBehaviour
     void Update()
     {
         hitSuccess = false;
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         // When target object hit
-        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.GetComponent<LanguageObserverTarget>() != null)
+        //if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.GetComponent<LanguageObserverTarget>() != null)
+        //updated raycast origin to be serializable field "laser" where we will add in a line renderer which will be parented to hand tool
+        if (Physics.Raycast(laser.transform.position, laser.transform.forward, out hit) && hit.collider.gameObject.GetComponent<LanguageObserverTarget>() != null)
         {
             obj = hit.collider.gameObject;
             if (obj != null && !objectSet)
@@ -42,7 +45,7 @@ public class SelectionManager : MonoBehaviour
                 objectSet = true;
                 firstObjectHit = true;
                 hitSuccess = true;
-                // dnot an animating person
+                // not an animating person
                 if (!obj.GetComponent<LanguageObserverTarget>().animatable)
                 {
                     objRenderer = obj.GetComponent<Renderer>();

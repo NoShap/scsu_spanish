@@ -11,11 +11,11 @@ public class checkpointManager : MonoBehaviour
     {
         fadeIn, // screen goes from black to full brightness
         voiceOver1, //historical intro
-         dialogue1, // talk with Sanchez Mazas 
+        dialogue1, // talk with Sanchez Mazas 
         dialogue2, // guard talking to you
-         voiceOver2, //explaining checkpoints and tasks
-         task1, // get food for Sanchez Mazas 
-         voiceOver3, //explaining languageObserver
+        voiceOver2, //explaining checkpoints and tasks
+        task1, // get food for Sanchez Mazas 
+        voiceOver3, //explaining languageObserver
         dialogue3, //talk with Food Stand Man 
         task2, // pick up food and receive directive to return to SM
         dialogue4, // Tell Sanchez Mazas to eat food
@@ -30,7 +30,7 @@ public class checkpointManager : MonoBehaviour
     }
 
     private GameObject UI;
-    public stage currStage = stage.fadeIn;
+    public stage currStage = stage.event2;
     public GameObject checkpointPrefab;
     public GameObject Guard;
     private GameObject currCheckpoint;
@@ -141,13 +141,16 @@ public class checkpointManager : MonoBehaviour
                 stageOpen = false;
                 StartCoroutine("GiveFood");
                 dialogueManager.startDialogue(3);
-                //UI.GetComponent<Text>().text = "\n Task Complete. You may now Explore the Map.";
+                UI.GetComponent<Text>().text = "\n Task Complete. Press 7 to speak with Sanchez Mazas.";
             }
         }
-        // event1 watching prisoners be escorted out
-        if (currStage == stage.event1 && stageOpen)
+        //event1 watching prisoners be escorted out
+            if (currStage == stage.event1 && stageOpen)
         {
             stageOpen = false;
+            UI.GetComponent<Text>().text = "\n The prisoners are being moved outside.";
+            var guard_mover = Guard.GetComponent<DestinationMove>();
+             guard_mover.moveToDestination(guard_mover.target);
             prisoners.GetComponent<MoveOut>().moveOutChildren(prisoners.transform);
             currStage += 1;
             stageOpen = true;
@@ -156,20 +159,25 @@ public class checkpointManager : MonoBehaviour
         if (currStage == stage.dialogue5 && stageOpen)
         {
             stageOpen = false;
+            UI.GetComponent<Text>().text = "\n A guard has a command for you. Press 7 to speak with him.";
             dialogueManager.startDialogue(4);
         }
         // tell Sanchez Mazas to get up
         if (currStage == stage.dialogue6 && stageOpen)
         {
             stageOpen = false;
+            UI.GetComponent<Text>().text = "\n Press 7 to relay your command to Sanchez Mazas.";
             dialogueManager.startDialogue(5);
+            UI.GetComponent<Text>().text = "\n Press 7 to let Sanchez Mazas out of the cell.";
             mazasController.getUp();
         }
         // Sanchez Mazas goes outside
         if (currStage == stage.event2 && stageOpen)
         {
             stageOpen = false;
+            UI.GetComponent<Text>().text = "\n Follow Sanchez Mazas outside.";
             mazasController.nextDestination();
+            Debug.Log("waiting");
             waitForTime(10f);
         }
 
@@ -177,14 +185,16 @@ public class checkpointManager : MonoBehaviour
         if (currStage == stage.event3 && stageOpen)
         {
             stageOpen = false;
+            UI.GetComponent<Text>().text = "\n Chase after Sanchez Mazas!";
             mazasController.startRunning();
+            UI.GetComponent<Text>().text = "\n Press 7 to tell Sanchez Mazas to stop running.";
             dialogueManager.startDialogue(6);
-            //start event 2
         }
         //tell Sanchez Mazas to stop
         if (currStage == stage.dialogue7 && stageOpen)
         {
             stageOpen = false;
+            UI.GetComponent<Text>().text = "\n Press 7 to tell Sanchez Mazas to stop running.";
             dialogueManager.startDialogue(6);
         }
         if (currStage == stage.voiceOver4 && stageOpen)
@@ -193,6 +203,8 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.fadeOut)
         {
+          mazasController.startRunning();
+          dialogueManager.startDialogue(3);
             //fadeOut scene into conclusion scene
         }
 
@@ -202,6 +214,7 @@ public class checkpointManager : MonoBehaviour
     IEnumerator waitForTime(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        Debug.Log("done waiting");
         currStage += 1;
         stageOpen = true;
     }
