@@ -9,7 +9,7 @@ public class checkpointManager : MonoBehaviour
     //need a new function to treat events like dialogues and voiceovers
     public enum stage
     {
-        fadeIn, // screen goes from black to full brightness
+        // fadeIn, // screen goes from black to full brightness
         // voiceOver1, //historical intro
         // dialogue1, // talk with Sanchez Mazas 
         // dialogue2, // guard talking to you
@@ -19,8 +19,8 @@ public class checkpointManager : MonoBehaviour
         // dialogue3, //talk with Food Stand Man 
         // task2, // pick up food and receive directive to return to SM
         // dialogue4, // Tell Sanchez Mazas to eat food
-        // event1, //watching prisoners be escorted out
-        // dialogue5, //Guard Tells you to get the prisoner
+        event1, //watching prisoners be escorted out
+        dialogue5, //Guard Tells you to get the prisoner
         dialogue6, // tell SM to get up and go outside (and move him outside)
         event2, // SM goes outside
         event3, // Sanchez Mazas runs away and player yells stop
@@ -60,12 +60,12 @@ public class checkpointManager : MonoBehaviour
     void Update()
     {
 
-        // // Stage 0
-        if (currStage == stage.fadeIn)
-        {
-            // Wait for Fade In and then proceed
-            currStage++;
-        }
+        // Stage 0
+        // if (currStage == stage.fadeIn)
+        // {
+        //     // Wait for Fade In and then proceed
+        //     currStage++;
+        // }
         // // Stage 1
         // if (currStage == stage.voiceOver1 && stageOpen)
         // {
@@ -91,7 +91,7 @@ public class checkpointManager : MonoBehaviour
         // if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task
         // {
         //     stageOpen = false;
-        //     //display text
+        //     // Display text
         //     UI.GetComponent<Text>().text = "\n Proceed to the Food Pickup Area outside the prison.";
         //     //instantiate a checkpoint prefab at position and rotation rot. then transform it to the appropriate size.
         //     Quaternion rot = Quaternion.Euler(0, -34.2f, 0);
@@ -120,7 +120,7 @@ public class checkpointManager : MonoBehaviour
         // if (currStage == stage.dialogue3 && stageOpen)
         // {
         //     stageOpen = false;
-        //     print("Talk with food stand ");
+        //     print("Talk with f ood stand ");
         //     UI.GetComponent<Text>().text = "\n Press 7 to speak with the guard on kitchen duty.";
         //     dialogueManager.startDialogue(2);
         // }
@@ -147,24 +147,24 @@ public class checkpointManager : MonoBehaviour
         //         UI.GetComponent<Text>().text = "\n Task Complete. Press 7 to speak with Sanchez Mazas.";
         //     }
         // }
-        // // event1 watching prisoners be escorted out
-        // if (currStage == stage.event1 && stageOpen)
-        // {
-        //     stageOpen = false;
-        //     UI.GetComponent<Text>().text = "\n The prisoners are being moved outside.";
-        //     var guard_mover = Guard.GetComponent<DestinationMove>();
-        //     guard_mover.moveToDestination(guard_mover.target);
-        //     prisoners.GetComponent<MoveOut>().moveOutChildren(prisoners.transform);
-        //     currStage += 1;
-        //     stageOpen = true;
-        // }
-        // //Guard Tells you to get the prisoner
-        // if (currStage == stage.dialogue5 && stageOpen)
-        // {
-        //     stageOpen = false;
-        //     UI.GetComponent<Text>().text = "\n A guard has a command for you. Press 7 to speak with him.";
-        //     dialogueManager.startDialogue(4);
-        // }
+        // event1 watching prisoners be escorted out
+        if (currStage == stage.event1 && stageOpen)
+        {
+            stageOpen = false;
+            UI.GetComponent<Text>().text = "\n The prisoners are being moved outside.";
+            var guard_mover = Guard.GetComponent<DestinationMove>();
+            guard_mover.moveToDestination(guard_mover.target);
+            prisoners.GetComponent<MoveOut>().moveOutChildren(prisoners.transform);
+            currStage += 1;
+            stageOpen = true;
+        }
+        //Guard Tells you to get the prisoner
+        if (currStage == stage.dialogue5 && stageOpen)
+        {
+            stageOpen = false;
+            UI.GetComponent<Text>().text = "\n A guard has a command for you. Press 7 to speak with him.";
+            dialogueManager.startDialogue(4);
+        }
         // tell Sanchez Mazas to get up
         if (currStage == stage.dialogue6 && stageOpen)
         {

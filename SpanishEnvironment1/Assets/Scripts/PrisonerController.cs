@@ -16,7 +16,7 @@ public class PrisonerController : MonoBehaviour
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
         nav.speed = 0.5f;
-        nav.stoppingDistance = 0.3f;
+        nav.stoppingDistance = 4f;
         nav.radius = 0.6f;
     }
     IEnumerator LineUp()
