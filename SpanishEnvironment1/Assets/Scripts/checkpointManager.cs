@@ -33,6 +33,7 @@ public class checkpointManager : MonoBehaviour
     public stage currStage = stage.event2;
     public GameObject checkpointPrefab;
     public GameObject Guard;
+    private Animator guardAnim;
     private GameObject currCheckpoint;
     public GameObject door;
     private MazasController mazasController;
@@ -52,6 +53,7 @@ public class checkpointManager : MonoBehaviour
         // currStage = stage.voiceOver1; //should eventually be set to fadeIn
         mazasController = GameObject.Find("SanchezMazas").GetComponent<MazasController>();
         UI = GameObject.Find("UI");
+        guardAnim = Guard.GetComponent<Animator>();
     }
 
 
@@ -86,10 +88,12 @@ public class checkpointManager : MonoBehaviour
             var guard_mover = Guard.GetComponent<DestinationMove>();
             guard_mover.moveToDestination(guard_mover.target);
             dialogueManager.startDialogue(1);
+            guardAnim.SetBool("Talking", true);
         }
         // Stage 2
         if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task
         {
+            guardAnim.SetBool("Talking", false);
             stageOpen = false;
             // Display text
             UI.GetComponent<Text>().text = "\n Proceed to the Food Pickup Area outside the prison.";
