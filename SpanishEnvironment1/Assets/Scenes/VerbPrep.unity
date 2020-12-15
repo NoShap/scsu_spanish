@@ -906,9 +906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa4614f33e044ff8856da03b5feb3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frames:
-  - {fileID: 2100000, guid: 4e0ab9df16161419f86febc0837803ca, type: 2}
-  - {fileID: 2100000, guid: f3294d47a3236430588c8cadd4064fdd, type: 2}
 --- !u!64 &1462800789
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1120,9 +1117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa4614f33e044ff8856da03b5feb3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frames:
-  - {fileID: 2100000, guid: 6cfac0c7ada0445a2af3cb851742e27e, type: 2}
-  - {fileID: 2100000, guid: 53188f854e86b4f83928c7c2d4818e2f, type: 2}
 --- !u!64 &1559938643
 MeshCollider:
   m_ObjectHideFlags: 0

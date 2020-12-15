@@ -8847,17 +8847,10 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
-  - name: GetFood
-    clip: {fileID: 8300000, guid: dc1bd72ab2fff41ba924601b36e76ced, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
   dialogueFinished: 0
   playerSpeaking: 0
   conversationLines:
   - '"Tengo hambre"'
-  - '"Vaya a buscar la comida"'
 --- !u!4 &1988645942
 Transform:
   m_ObjectHideFlags: 0
