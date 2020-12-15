@@ -14,6 +14,7 @@ public class ViveInput : MonoBehaviour
     public SteamVR_Action_Vector2 touchPadAction;
 
     public SteamVR_Action_Boolean sideTouch;
+    public SteamVR_Action_Boolean triggerPull;
 
     // Start is called before the first frame update
     void Start()
@@ -30,13 +31,16 @@ public class ViveInput : MonoBehaviour
         Vector2 touchPadValue = touchPadAction.GetAxis(SteamVR_Input_Sources.Any);
 
         bool sideTouched = sideTouch.GetState(SteamVR_Input_Sources.Any);
+
+        bool triggerPulled = triggerPull.GetState(SteamVR_Input_Sources.Any);
+
         /*   
        if (triggerValue > 0)
         {   
            print(triggerValue);
         }*/
 
-        if(touchPadValue != Vector2.zero)
+        if (touchPadValue != Vector2.zero)
         {
             float addX = touchPadValue.x * 0.1f;
             float addY = touchPadValue.y * 0.1f;
@@ -53,6 +57,12 @@ public class ViveInput : MonoBehaviour
         {
             print("Xavier, you thot");
             
+        }
+
+        if (triggerPulled)
+        {
+            print("Noah, you genius");
+
         }
     }
 }

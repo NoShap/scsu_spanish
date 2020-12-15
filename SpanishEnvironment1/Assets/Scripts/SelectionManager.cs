@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR;
 
 //Need to make sure a rigidbody is attached to language Observer target
 //
@@ -19,6 +22,7 @@ public class SelectionManager : MonoBehaviour
     public Font customFont;
     private bool notPlaying = true; //checks if an audio file is currently playing
     public AudioManager WordAudioManager;
+    public SteamVR_Action_Boolean triggerPull;
     [SerializeField] GameObject laser;
 
     // Start is called before the first frame update
@@ -31,6 +35,7 @@ public class SelectionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool triggerPulled = triggerPull.GetState(SteamVR_Input_Sources.Any);
         hitSuccess = false;
         //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -63,7 +68,7 @@ public class SelectionManager : MonoBehaviour
 
             //allow player to hear audio when 'x' key is pressed
             //allow this any number of times as long as they're still looking at the object
-            if (Input.GetKeyDown("x") && notPlaying)
+            if (triggerPulled && notPlaying)
             {
                 StartCoroutine(PlayAudio(obj));
                 if (obj.GetComponent<LanguageObserverTarget>().animatable)
@@ -128,7 +133,7 @@ public class SelectionManager : MonoBehaviour
 
                 //add  text to UI
                 Text t = newCanvas.AddComponent<Text>();
-                t.text = hit.collider.gameObject.name + "\n Press X to hear Audio";
+                t.text = hit.collider.gameObject.name + "\n Pull trigger to hear Audio";
                 t.font = customFont;
                 t.material = customFont.material;
                 t.fontSize = 1;
