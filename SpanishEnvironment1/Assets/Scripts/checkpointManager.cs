@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -70,30 +70,28 @@ public class checkpointManager : MonoBehaviour
         if (currStage == stage.voiceOver1 && stageOpen)
         {
             stageOpen = false;
-            //call coroutine to play audio file of voiceover
+            // coroutine to play audio file of voiceover
             StartCoroutine(waitForAudioClip("VoiceOver1"));
         }
         if (currStage == stage.dialogue1 && stageOpen)
         {
             stageOpen = false;
-            UI.GetComponent<Text>().text = "\n Sanchez Mazas looks like he needs to speak to you. Press 7 to listen, and 7 to continue a conversation.";
             dialogueManager.startDialogue(0);
         }
         if (currStage == stage.dialogue2 && stageOpen)
         {
             stageOpen = false;
-            UI.GetComponent<Text>().text = "\n A guard needs to talk to you. Press 7 to listen.";
             var guard_mover = Guard.GetComponent<DestinationMove>();
             guard_mover.moveToDestination(guard_mover.target);
             dialogueManager.startDialogue(1);
         }
-        // Stage 2
+        //Stage 2
         if (currStage == stage.voiceOver2 && stageOpen) //beginning food delivery task
         {
             stageOpen = false;
-            // Display text
+            //display text
             UI.GetComponent<Text>().text = "\n Proceed to the Food Pickup Area outside the prison.";
-            //instantiate a checkpoint prefab at position and rotation rot. then transform it to the appropriate size.
+            // instantiate a checkpoint prefab at position and rotation rot.then transform it to the appropriate size.
             Quaternion rot = Quaternion.Euler(0, -34.2f, 0);
             currCheckpoint = Instantiate(checkpointPrefab, new Vector3(119.81f, 5.1622f, 148.78f), rot);
             currCheckpoint.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -111,17 +109,16 @@ public class checkpointManager : MonoBehaviour
             }
         }
 
-        //VO: good work for completing the task. currently explains the languageobserver tool again
+    //VO: good work for completing the task.currently explains the languageobserver tool again
         if (currStage == stage.voiceOver3 && stageOpen)
-        {
-            stageOpen = false;
-            StartCoroutine(waitForAudioClip("VoiceOver3"));
-        }
+            {
+                stageOpen = false;
+                StartCoroutine(waitForAudioClip("VoiceOver3"));
+            }
         if (currStage == stage.dialogue3 && stageOpen)
         {
             stageOpen = false;
-            print("Talk with f ood stand ");
-            UI.GetComponent<Text>().text = "\n Press 7 to speak with the guard on kitchen duty.";
+            print("Talk with food stand ");
             dialogueManager.startDialogue(2);
         }
         // having acquired the tray, go deliver it to sanchez mazas
@@ -147,13 +144,13 @@ public class checkpointManager : MonoBehaviour
                 UI.GetComponent<Text>().text = "\n Task Complete. Press 7 to speak with Sanchez Mazas.";
             }
         }
-        // event1 watching prisoners be escorted out
-        if (currStage == stage.event1 && stageOpen)
+        //event1 watching prisoners be escorted out
+            if (currStage == stage.event1 && stageOpen)
         {
             stageOpen = false;
             UI.GetComponent<Text>().text = "\n The prisoners are being moved outside.";
             var guard_mover = Guard.GetComponent<DestinationMove>();
-            guard_mover.moveToDestination(guard_mover.target);
+             guard_mover.moveToDestination(guard_mover.target);
             prisoners.GetComponent<MoveOut>().moveOutChildren(prisoners.transform);
             currStage += 1;
             stageOpen = true;
@@ -206,8 +203,8 @@ public class checkpointManager : MonoBehaviour
         }
         if (currStage == stage.fadeOut)
         {
-            mazasController.startRunning();
-            dialogueManager.startDialogue(3);
+          mazasController.startRunning();
+          dialogueManager.startDialogue(3);
             //fadeOut scene into conclusion scene
         }
 
